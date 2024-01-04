@@ -1,0 +1,64 @@
+<!-- BEGIN: main -->
+<input type="hidden" id="property_location" value="{LOCATION}">
+<input type="hidden" id="center_latitude" value="{CENTER_LATITUDE}">
+<input type="hidden" id="center_longitude" value="{CENTER_LONGITUDE}">
+<div class="property-list-page">
+  <div class="container-full-width">
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-7 order-2 order-md-2 order-lg-1 list-section">
+        {BREADCRUMB}
+        {CONTENT}
+        <div class="property-list-section">
+          <!-- BEGIN: property_list_section -->
+            <div class="property-box {SECTION_CLASS}">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="slider-section properties-slider-section">
+                    <div class="slider properties-slide">
+                      <!-- BEGIN: property_slider_section -->
+                      <div class="slider-box"><img src="{IMAGE_PATH}" alt="{NAME}" title="{NAME}" width="740" height="740" /></div>
+                      <!-- END: property_slider_section -->
+                      <!-- BEGIN: no_property_slider_section -->
+                        <div class="slider-box"><img src="" alt="{NAME}" title="{NAME}" width="740" height="740" /></div>
+                      <!-- END: no_property_slider_section -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-8 pl-0">
+                  <div id="{PROPERTY_ID}" class="property-block">
+                    <h2>{NAME}</h2>
+                    <p class="address">{ADDRESS}</p>
+                    <p class="property-desc">{SHORT_DESCRIPTION}</p>
+                  </div>
+                  <div class="property-list-btn text-right">
+                      
+                    <!-- BEGIN: show_buttton -->
+                    
+                    <a href="{PROPERTY_URI}" class="btn-black">View Property</a>
+                    
+                    <a style="cursor:pointer;" class="btn-black" data-property-name="{NAME}" data-location="{LOCATION_DISP}" data-target="book-a-tour" onclick="Calendly.initPopupWidget({url: '{CALENDLY_METTING_URL}?a2={CALENDLY_PROPERTY_NAME},%20{CALENDLY_PROPERTY_ADDRESS}'});return false;">Book a Tour</a>
+                    <!-- END: show_buttton -->
+                    
+                    <!-- BEGIN: virtual_tour_section -->
+                    <a href="{PROPERTY_URI}#virtual_tour" class="btn-black-border">Virtual Tour</a>
+                    <!-- END: virtual_tour_section -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- END: property_list_section -->
+        </div>
+        {PROPERTY_LIST_SECONDARY_CONTENT}
+      </div>
+      <div class="col-12 col-md-12 col-lg-5 order-1 order-md-1 order-lg-2 pr-0 primary-map map-sticky overflow-hidden" id="map-sticky">
+        <div class="map-section">
+          <div id="map" class="property-list-map"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- END: main -->

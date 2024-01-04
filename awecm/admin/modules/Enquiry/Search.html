@@ -1,0 +1,32 @@
+<!-- BEGIN:main -->
+<tr>
+  <td width="35%">
+    <input type="text" class="form-control" name="name_email" id="name_email" placeholder="Name or Email" value="{NAME_EMAIL_VAL}">
+  </td>
+  <td width="22%">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+      <input type="text" class="form-control readonly-field" name="fromdate" id="fromdate" value="{FROMDATE}" placeholder="From Date" readonly>
+    </div>
+  </td> 
+  <td width="22%">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+         <input type="text" class="form-control readonly-field" name="todate" 
+          id="todate" value="{TODATE}"  placeholder="To Date" readonly>
+    </div>
+  </td>
+  <td width="15%">
+    <select name="enquiry_type" class="form-control">{ENQUIRY_TYPE}</select>
+  </td>
+</tr>
+<tr>
+  <td colspan="5" class="enquiry-search-box">
+    <button type="submit" class="btn btn-primary">Search</button>
+    <a href="./?module=Enquiry&action=index" class="btn btn-default" >Clear</a>
+    
+  </td>
+
+
+</tr>
+<!-- END:main -->

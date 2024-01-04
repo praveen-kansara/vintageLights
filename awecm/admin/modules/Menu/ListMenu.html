@@ -1,0 +1,140 @@
+<!-- BEGIN:main -->
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>
+      Menus
+    </h1>
+  </section>
+  <section class="content menu-section">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box box-primary border-transparent">
+          <div class="box-body">
+            <div class="manage-menus">
+              <form method="get" name="MenuForm">
+                <input type="hidden" name="module" value="Menu">
+                <input type="hidden" name="action" value="index">
+                <label for="select-menu-to-edit" class="selected-menu">Select a Menu to Edit</label>&nbsp;
+                <select name="menu" id="select-menu-to-edit" class="form-control" style="width: 150px; display: inline-block;">
+                  {MENU_LIST}
+                </select>
+                <span class="add-new-menu-action"> &nbsp; or <a href="" data-toggle="modal" 
+                  data-target="#myModal">Create a New Menu</a></span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="box box-default">
+              <div class="box-header with-border">
+                <h3 class="box-title">Pages</h3>
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+              </div>
+              <div class="box-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="div-pages">
+                      <div class="mt-checkbox-list">
+                        <!-- BEGIN: page_names -->
+                        <label class="mt-checkbox mt-checkbox-outline">
+                            <input value="{PAGE_ID}" data-page-name="{PAGE_NAME}" class="page-ids" type="checkbox"> {PAGE_NAME}
+                            <span></span>
+                        </label>
+                        <!-- END: page_names -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="box-footer">
+                <button class="btn btn-primary btn-sm" id="add_new_menu">Add to Menu</button>
+              </div>
+            </div>
+
+            <div class="box box-default">
+              <div class="box-header with-border">
+                <h3 class="box-title">Custom</h3>
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+              </div>
+              <div class="box-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <form role="form">
+                      <div class="form-group">
+                        <label class="it-normal">Navigation Label</label>
+                        <input type="text" class="form-control navigation-label-custom input-sm input-font" placeholder="Enter navigation label" />
+                      </div>
+                      <div class="form-group">
+                        <label class="it-normal">URL</label>
+                        <input type="text" class="form-control url-custom input-sm input-font" value="" placeholder="Enter url"/>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="box-footer">
+                <button class="btn btn-primary btn-sm" id="add_new_custom_menu">Add to Menu</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="box box-default">
+              <div class="box-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h2 class="no-margin heading-h2">Menu Structure</h2>
+                    <div class="dy-menus-section">
+                      <ol class="sortable">
+                        {BUILD_MENU}
+                      </ol>
+                      <button class="btn btn-success btn-sm margin-right" 
+                        id="save_menu">Save</button>&nbsp;&nbsp;
+                      <button class="btn btn-sm btn-danger" data-delete-path='./?module=Menu&action=Delete&id=' id="delete_menu">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <form class="form-horizontal" method="post">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Create Menu</h4>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="module" value="Menu">
+          <input type="hidden" name="action" value="Save">
+          <div class="box-body">
+            <div class="form-group">
+              <label for="menu_name" class="col-sm-3 control-label">Menu Name</label>
+              <div class="col-sm-9">
+                <input name="name" type="text" required class="form-control" id="menu_name" placeholder="Enter menu name">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Create</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- END:main -->

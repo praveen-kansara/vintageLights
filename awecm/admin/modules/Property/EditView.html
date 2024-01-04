@@ -1,0 +1,420 @@
+<!-- BEGIN:main -->
+<div class="content-wrapper">
+<!-- BEGIN:msg -->
+  <div class="alert alert-success alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <p><b>Property {SUCCESS_MESSAGE}</b></p>
+  </div>
+<!-- END:msg -->
+  <section class="content-header">
+    <h1>
+      {MODE} Property
+    </h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <form role="form" method="post" id="form" class="form-property" enctype="multipart/form-data">
+        <div class="col-xs-9">
+          <div class="box">
+            <input type="hidden" name="module" value="Property">
+            <input type="hidden" name="action" value="Save">
+            <input type="hidden" name="id" value="{ID}">
+            <input type="hidden" name="slug" value="{PAGE_SLUG}" />
+            <input type="hidden" name="post_type" value="property">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input required name="title" value="{PROPERTY_TITLE}" type="text" class="form-control requiredField valid" id="title" placeholder="Enter property title" />
+              </div>
+              <div class="form-group {SLUG_EXISTS}" id="slug_block">
+                <p class="{SLUG_CLASS}"><label>Permalink:
+                   </label>&nbsp;<span class="permalink">{PERMALINK}</span>
+                   &nbsp;<button type="button" class='btn btn-default btn-xs btn-slug-edit'>Edit</button> 
+                   <button type="button" class='btn btn-default btn-xs hidden btn-slug-ok'>OK</button>
+                   &nbsp;<button type="button" class='btn btn-default btn-xs hidden btn-slug-cancel'>Cancel</button>
+                   &nbsp;<button type="button" id="btn-slug-view_p" class="btn btn-default btn-xs {HIDE_VIEW_BTN} btn-slug-view" onclick="window.open('{PAGE_LINK}')">View</button>
+                </p>
+              </div>
+              <div class="form-group pos-r">
+                <button type="button" class="visual switcher">Text</button> 
+                <label for="content">Description/Content</label>
+                <textarea name="content" type="text" class="form-control editor" id="content" 
+                  placeholder="Enter property description">{PROPERTY_CONTENT}</textarea>
+              </div>
+              <div class="form-group">
+                <label for="short_description">Short Description</label>
+                <textarea name="short_description" type="text" class="form-control" 
+                  id="short_description" placeholder="Enter short description for property">{PROPERTY_SHORT_DESCRIPTION}</textarea>
+              </div>
+              <div class="form-group">
+                <label for="meta">Banner Image ( Click to add Banner Image )</label>
+                <div class="banner-image-wrapper">
+                  <i class="fa fa-times remove-banner text-danger" id="remove-banner" title="Remove Banner Image"></i>
+                  <input type="hidden" name="banner_image" value="{MEDIA_ID}"/>
+                  <div class="banner-image" id="banner-image">
+                    <img class="img-responsive banner-img" src="{BANNER_IMAGE}" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="meta">Second banner Image ( Click to add second Banner Image )</label>
+                <div class="banner-image-wrapper">
+                  <i class="fa fa-times remove-banner text-danger" id="remove-second-banner" title="Remove Second Banner Image"></i>
+                  <input type="hidden" name="second_banner_image" value="{SECOND_BANNER_MEDIA_ID}"/>
+                  <div class="banner-image" id="second-banner-image">
+                    <img class="img-responsive second-banner-img" src="{SECOND_BANNER_IMAGE}" />
+                  </div>
+                </div>
+              </div>
+               <div class="form-group">
+                <label for="matterport_url">Matterport URL 1</label>
+                <textarea name="matterport_url" class="form-control"                   id="matterport_url" placeholder="Matterport iframe code">{MATTERPORT_URL}</textarea>
+              </div>
+                <div class="form-group">
+                <label for="matterport_url2">Matterport URL 2</label>
+                <textarea name="matterport_url2" class="form-control"                   id="matterport_url2" placeholder="Matterport iframe code">{MATTERPORT_URL2}</textarea>
+              </div>
+              <div class="form-group">
+                <label for="property_video">Video</label>
+                <textarea name="property_video" type="text" class="form-control" 
+                  id="property_video" placeholder="Enter video link for property">{PROPERTY_VIDEO}</textarea>
+              </div>
+              <div class="form-group">
+                <label for="meta">Video Placeholder Image ( Click to add Video Placeholder Image )</label>
+                <div class="banner-image-wrapper">
+                  <i class="fa fa-times remove-banner text-danger" id="remove-video-placeholder-image" title="Remove Video Placeholder Image"></i>
+                  <input type="hidden" name="video_placeholder_image" value="{VIDEO_PLACEHOLDER_MEDIA_ID}"/>
+                  <div class="banner-image" id="video-placeholder-image">
+                    <img class="img-responsive video-placeholder-img" src="{VIDEO_PLACEHOLDER_IMAGE}" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="floor_plan_title">Floor Plan Title</label>
+                <input name="floor_plan_title" value="{FLOOR_PLAN_TITLE}" type="text" class="form-control" id="floor_plan_title" placeholder="Enter floor plan title" />
+              </div>
+              <div class="form-group">
+                <label for="floor_plan_sub_title">Floor Plan Sub Title</label>
+                <input name="floor_plan_sub_title" value="{FLOOR_PLAN_SUB_TITLE}" type="text" class="form-control" id="floor_plan_sub_title" placeholder="Enter floor plan sub title" />
+              </div>
+              <div class="form-group">
+                <label for="meta">Floor plan Image ( Click to add floor plan image )</label>
+                <div class="banner-image-wrapper">
+                  <i class="fa fa-times remove-banner text-danger" id="floor-plan-banner" title="Remove Floor Plan Image"></i>
+                  <input type="hidden" name="floor_plan_image" value="{FLOOR_PLAN_MEDIA_ID}"/>
+                  <div class="banner-image" id="floor-plan-image">
+                    <img class="img-responsive floor-plan-img" src="{FLOOR_PLAN_IMAGE}" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="meta">Floor plan zoom Image ( Click to add floor plan zoom image )</label>
+                <div class="banner-image-wrapper">
+                  <i class="fa fa-times remove-banner text-danger" id="floor-plan-zoom-banner" title="Remove Floor Plan Image"></i>
+                  <input type="hidden" name="floor_plan_zoom_image" value="{FLOOR_PLAN_ZOOM_MEDIA_ID}"/>
+                  <div class="banner-image" id="floor-plan-zoom-image">
+                    <img class="img-responsive floor-plan-zoom-img" src="{FLOOR_PLAN_ZOOM_IMAGE}" />
+                  </div>
+                </div>
+              </div>
+              
+               <div class="form-group">
+                <label for="floor_plan_title2">Floor Plan 2 Title</label>
+                <input name="floor_plan2_title" value="{FLOOR_PLAN2_TITLE}" type="text" class="form-control" id="floor_plan2_title" placeholder="Enter floor plan 2 title" />
+              </div>
+              <!--Floor Plan 2 start -->
+               <div class="form-group">
+                <label for="meta">Floor plan 2 Image ( Click to add floor plan image )</label>
+                <div class="banner-image-wrapper">
+                  <i class="fa fa-times remove-banner text-danger" id="floor-plan2-banner" title="Remove Floor2 Plan Image"></i>
+                  <input type="hidden" name="floor_plan2_image" value="{FLOOR_PLAN2_MEDIA_ID}"/>
+                  <div class="banner-image" id="floor-plan2-image">
+                    <img class="img-responsive floor-plan2-img" src="{FLOOR_PLAN2_IMAGE}" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="meta">Floor plan 2 zoom Image ( Click to add floor plan zoom image )</label>
+                <div class="banner-image-wrapper">
+                  <i class="fa fa-times remove-banner text-danger" id="floor-plan2-zoom-banner" title="Remove Floor Plan 2 Image"></i>
+                  <input type="hidden" name="floor_plan2_zoom_image" value="{FLOOR_PLAN2_ZOOM_MEDIA_ID}"/>
+                  <div class="banner-image" id="floor-plan2-zoom-image">
+                    <img class="img-responsive floor-plan2-zoom-img" src="{FLOOR_PLAN2_ZOOM_IMAGE}" />
+                  </div>
+                </div>
+              </div>
+              <!--Floor Plan 2 end-->
+              
+              
+              <!--Floor Plan 3 start -->
+               <div class="form-group">
+                <label for="floor_plan_title3">Floor Plan 3 Title</label>
+                <input name="floor_plan3_title" value="{FLOOR_PLAN3_TITLE}" type="text" class="form-control" id="floor_plan3_title" placeholder="Enter floor plan 3 title" />
+              </div>
+               <div class="form-group">
+                <label for="meta">Floor plan 3 Image ( Click to add floor plan image )</label>
+                <div class="banner-image-wrapper">
+                  <i class="fa fa-times remove-banner text-danger" id="floor-plan3-banner" title="Remove Floor3 Plan Image"></i>
+                  <input type="hidden" name="floor_plan3_image" value="{FLOOR_PLAN3_MEDIA_ID}"/>
+                  <div class="banner-image" id="floor-plan3-image">
+                    <img class="img-responsive floor-plan3-img" src="{FLOOR_PLAN3_IMAGE}" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="meta">Floor plan 3 zoom Image ( Click to add floor plan zoom image )</label>
+                <div class="banner-image-wrapper">
+                  <i class="fa fa-times remove-banner text-danger" id="floor-plan3-zoom-banner" title="Remove Floor Plan 3 Image"></i>
+                  <input type="hidden" name="floor_plan3_zoom_image" value="{FLOOR_PLAN3_ZOOM_MEDIA_ID}"/>
+                  <div class="banner-image" id="floor-plan3-zoom-image">
+                    <img class="img-responsive floor-plan3-zoom-img" src="{FLOOR_PLAN3_ZOOM_IMAGE}" />
+                  </div>
+                </div>
+              </div>
+              <!--Floor Plan 3 end-->
+              
+              
+              
+              
+              
+              <div class="form-group">
+                <label for="sequence">Sequence</label>
+                <input name="sequence" type="number" class="form-control" value="{SEQUENCE}" 
+                  id="sequence" min="0" placeholder="Enter sequence" />
+              </div>
+
+              <div class="form-group">
+                <label for="sequence">Amenities</label>
+                <div class="amenities-checkbox checkbox mt-0">
+                  <!-- BEGIN:amenities_block -->
+                    <label for="{AMENITIES_VALUE}" class="right-spacing"><input type="checkbox" name="property_amenities[]" value="{AMENITIES_VALUE}" id="{AMENITIES_VALUE}" {AMENITIES_STATUS}> {AMENITIES_TITLE}</label>
+                  <!-- END:amenities_block -->
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="walkable_aminity">Walkable Amenities ( Add walkable amenities separated by next line )</label>
+                <textarea name="walkable_aminity" type="text" class="form-control" id="walkable_aminity" placeholder="Enter walkable amenities separated by next line">{WALKABLE_AMINITY}</textarea>
+              </div>
+              <div class="form-group">
+                <label for="onsite_aminity">Onsite Amenities ( Add onsite amenities separated by next line )</label>
+                <textarea name="onsite_aminity" type="text" class="form-control" id="onsite_aminity" placeholder="Enter onsite amenities separated by next line" >{ONSITE_AMINITY}</textarea>
+              </div>
+              <!--<div class="form-group">
+                <label for="property_location_code">Property Location (Add Google Map IFrame code )</label>
+                <textarea name="property_location_code" type="text" class="form-control" id="property_location_code" placeholder="Add property location">{PROPERTY_LOCATION_CODE}</textarea>
+              </div>-->
+              <div class="form-group">
+                <label for="property_address">Address</label>
+                <input required name="property_address" value="{PROPERTY_ADDRESS}" type="text" class="form-control" id="property_address" placeholder="Enter property address" />
+              </div>
+              
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="form-group">
+                    <label for="property_city">City</label>
+                    <select required id="property_city" name="property_city" class="form-control">{PROPERTY_CITY}</select>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="form-group">
+                    <label for="property_state">State</label>
+                    <input required name="property_state" value="{PROPERTY_STATE}" type="text" class="form-control" id="property_state" placeholder="Enter property state" />
+                  </div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="form-group">
+                    <label for="property_zip">Zip</label>
+                    <input required name="property_zip" value="{PROPERTY_ZIP}" type="text" class="form-control" id="property_zip" placeholder="Enter property zip" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <label for="property_lat">Latitude</label>
+                    <input required name="property_lat" value="{PROPERTY_LAT}" type="text" class="form-control" id="property_lat" placeholder="Enter property latitude" />
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="form-group">
+                    <label for="property_long">Longitude</label>
+                    <input required name="property_long" value="{PROPERTY_LONG}" type="text" class="form-control" id="property_long" placeholder="Enter property longitude" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="calendly_url">Calendly URL</label>
+                <input name="calendly_url" value="{CALENDLY_URL}" type="text" class="form-control" id="calendly_url" placeholder="Enter calendly_url" />
+              </div>
+              <!-- <div class="form-group">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="tag" value="featured" {FEATURED}> Featured
+                  </label>
+                </div>
+              </div> -->
+
+              <div class="form-group">
+                <input type="hidden" name="property_images" value="" id="page_short_description"/>
+                <label for="page_short_description">Select Image/s for property</label>
+                <div class="preview-section image-lib-grid" id="property_images">
+                  <ul class="images-list">
+                    <li tabindex="0" class="attachment hidden template">
+                      <i class="fa fa-times icon-delete-property-image text-danger" 
+                        title="delete image"></i>
+                      <div class="attachment-preview js--select-attachment type-image subtype-jpeg portrait">
+                        <div class="thumbnail">
+                          <div class="centered"> <img class="med-image img-responsive" src="" alt=""> </div>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- BEGIN:property_image -->
+                    <li tabindex="0" class="attachment appended">
+                      <i class="fa fa-times icon-delete-property-image text-danger" 
+                        title="delete image"></i>
+                      <div class="attachment-preview js--select-attachment type-image subtype-jpeg portrait">
+                        <div class="thumbnail">
+                          <div class="centered"> <img data-media-id={PROPERTY_IMAGE_ID} class="med-image img-responsive" src="{PROPERTY_IMAGE}" alt=""> </div>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- END:property_image -->
+                  </ul>
+                </div>
+                <div class="clearfix"></div>
+                <div class="add"><button type="button" 
+                  class="btn btn-primary attach-property-images">Add Images</button></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="box">
+          	<div class="box-body">
+          		<h3 class="margin-top-0">SEO Settings</h3>
+          		<div class="form-group">
+                <label for="meta_title">SEO Title</label>
+                <input name="meta_title" type="text" class="form-control" value="{META_TITLE}" 
+                  id="meta_title"placeholder="Enter SEO title" />
+              </div>
+              <div class="form-group">
+                <label for="meta_keywords">Meta Keywords</label>
+                <textarea name="meta_keywords" type="text" class="form-control" 
+                  id="meta_keywords" placeholder="Enter meta keywords">{META_KEYWORDS}</textarea>
+              </div>
+              <div class="form-group">
+                <label for="meta_description">Meta Description</label>
+                <textarea name="meta_description" class="form-control" id="meta_description" 
+                  placeholder="Enter meta description">{META_DESCRIPTION}</textarea>
+              </div>
+              <label>Meta Robot</label>
+              <div class="checkbox">
+                <label for="No Index" class="right-spacing">
+                  <input type="checkbox" name="meta_robots_index" id="No Index" 
+                  {META_ROBOTS_INDEX} value="1">No-Index
+                </label>
+                <label for="No Follow">
+                  <input type="checkbox" name="meta_robots_follow" 
+                  id="No Follow" {META_ROBOTS_FOLLOW} value="1">No-Follow</label>
+              </div>
+          	</div>
+          </div>
+          
+        </div>
+        <div class="col-xs-3">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">Publish</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group hidden">
+                    <label>Status</label>
+                    <select id="status" name="status" class="form-control">{SEARCH_STATUS}</select>
+                  </div>
+                  <div class="form-group">
+                    <button type="button" id="btn_save_draft" class="btn btn-primary btn-sm">Save Draft</button>
+                    <button type="button" id="btn_save_publish" 
+                      class="btn btn-success btn-sm">Publish</button>
+                    <a href="./?module=Property&action=index" class="btn btn-default btn-sm">Cancel</a>
+                  </div>
+                  <div class="form-group {HIDE_CLASS}">
+                    <a href="" class="text-danger" id="move_trash"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Move To Trash</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">Featured Image</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <input type="hidden" name="featured_image" value="{MEDIA_ID_FEATURED}"/>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="preview-featured-image">
+                      <img class="img-responsive featured-img" src="{FEATURED_IMAGE}" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <a id="link_set_featured_image" href="#open_popup">Set featured image</a>
+                    <span class="pull-right" id="remove_featured_image">
+                      <i class="fa fa-times cursor-pointer text-danger" 
+                        title="Remove featured image"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">Flyer</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div id="preview_brochure" class="preview-brochure">
+                      <input type="hidden" id="pdf_path" name="pdf_path" value="{BROCHURE_PATH_ONLY}">
+                      <a href="{BROCHURE_PATH}" target="blank" class="btn btn-border">
+                        <i class="fa fa-file-pdf-o" title="View Flyer"></i>&nbsp;&nbsp;View PDF
+                      </a>
+                      <span class="pull-right" id="remove_brochure">
+                        <i class="fa fa-times cursor-pointer text-danger" title="Remove"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div id="input_brochure">
+                      <p>Upload Flyer</p>
+                      <input type="file" name="brochure" id="brochure" accept=".pdf">
+                      <span class="text-danger" id="brocure_select_error">Only 'PDF' format is allowed</span>
+                      <!-- <a id="link_upload_brochure" href="#open_popup">Upload Brochure</a>
+                      <span class="pull-right" id="remove_brochure">
+                        <i class="fa fa-times cursor-pointer text-danger" title="Remove brochure"></i>
+                      </span> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+<!-- END:main -->

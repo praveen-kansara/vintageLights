@@ -1,0 +1,86 @@
+<!-- BEGIN:main -->
+<div class="content-wrapper">
+<!-- BEGIN:msg -->
+  <div class="alert alert-success alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <p><b>FAQ {SUCCESS_MESSAGE}</b></p>
+  </div>
+<!-- END:msg -->
+  <section class="content-header">
+    <h1>
+      {MODE} FAQ
+    </h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <form role="form" method="post" id="form" class="form-faq">
+        <div class="col-xs-9">
+          <div class="box">
+            <input type="hidden" name="module" value="FAQ">
+            <input type="hidden" name="action" value="Save">
+            <input type="hidden" name="id" value="{ID}">
+            <input type="hidden" name="slug" value="{PAGE_SLUG}" />
+            <input type="hidden" name="post_type" value="faq">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="title">Question</label>
+                <input required name="title" value="{QUESTION}" type="text" class="form-control" id="title" placeholder="Enter Question"/>
+              </div>
+              <div class="form-group {SLUG_EXISTS}" id="slug_block">
+                <p class="{SLUG_CLASS}"><label>Permalink:
+                   </label>&nbsp;<span class="permalink">{PERMALINK}</span>
+                   &nbsp;<button type="button" class='btn btn-default btn-xs btn-slug-edit'>Edit</button> 
+                   <button type="button" class='btn btn-default btn-xs hidden btn-slug-ok'>OK</button>
+                   &nbsp;<button type="button" class='btn btn-default btn-xs hidden btn-slug-cancel'>Cancel</button>
+                   &nbsp;<button type="button" id="btn-slug-view_p" class="btn btn-default btn-xs {HIDE_VIEW_BTN} btn-slug-view" onclick="window.open('{PAGE_LINK}')">View</button>
+                </p>
+              </div>
+              <div class="form-group pos-r">
+                <button type="button" class="visual switcher">Text</button> 
+                <label for="content">Answer</label>
+                <textarea name="content" type="text" class="form-control" id="content" placeholder="Enter answer">{ANSWER}</textarea>
+              </div>
+              <div class="form-group">
+                <label for="sequence">Sequence</label>
+                <input name="sequence" type="number" class="form-control" value="{SEQUENCE}" 
+                  id="sequence" min="0" placeholder="Enter sequence" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">Publish</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group hidden">
+                    <label>Status</label>
+                    <select id="status" name="status" class="form-control">{SEARCH_STATUS}</select>
+                  </div>
+                  <div class="form-group">
+                    <button type="button" id="btn_save_draft" 
+                      class="btn btn-primary btn-sm">Save Draft</button>
+                    <button type="button" id="btn_save_publish" 
+                      class="btn btn-success btn-sm">Publish</button>
+                    <a href="./?module=FAQ&action=index" 
+                      class="btn btn-default btn-sm">Cancel</a>
+                  </div>
+                  <div class="form-group {HIDE_CLASS}">
+                    <a href="" class="text-danger" id="move_trash"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Move To Trash</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+<!-- END:main -->

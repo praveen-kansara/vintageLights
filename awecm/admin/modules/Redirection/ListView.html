@@ -1,0 +1,66 @@
+<!-- BEGIN:main -->
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>
+      Redirections &nbsp;
+      <a href="./?module=Redirection&action=EditView" class="btn btn-success">Add New</a>
+    </h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <form method="get" name="searchForm" >
+          <input type="hidden" name="module" value="Redirection" />
+          <input type="hidden" name="action" id="action" value="index" />
+          <input type="hidden" name="order_by"      value="{ORDER_BY}" />
+          <input type="hidden" name="sort_order"    value="{SORT_ORDER}" />
+          <input type="hidden" name="offset"        value="{OFFSET}" />
+          <input type="hidden" name="p"             value="" />
+          <table class="table search-table">
+            {SEARCH_VIEW}
+          </table>
+          <div class="box">
+      			<div class="box-body table-responsive no-padding">
+              <table class="table table-hover editable-table">
+                <tbody>
+                  <tr>
+                    <th style="width: 30%">URL</th>
+                    <th style="width: 30%">Redirect URL</th>
+                    <th style="width: 12%">Added By</th>
+                    <th style="width: 15%">{MODIFIED_ORDER_BY}</th>
+                    <th style="width: 13%">Actions</th>
+                  </tr>
+                  <!-- BEGIN:pagerow -->
+                  <tr class="{row.row_cls}">
+                    <td><a href="./?module=Redirection&action=EditView&id={row.id}">{row.uri}</a></td>
+                    <td>{row.redir}</td>
+                    <td>{row.created_by}</td>
+                    <td>{row.date_modified}</td>
+                    <td>
+                      <button type="button" onclick="location.href = './?module=Redirection&action=EditView&id={row.id}';" class="custom-button"><i title="Edit Redirection" class="fa fa-edit"></i></button>&nbsp;&nbsp;
+                      <button type="button" data-delete-path='./?module=Redirection&action=Delete&id={row.id}' class="custom-button btn-delete-action"><i title="Delete Redirection" class="fa fa-trash"></i></button>&nbsp;&nbsp;
+                    </td>
+                  </tr>
+
+                  <!-- END:pagerow -->
+
+
+                  <!-- BEGIN: no_records -->
+                  <tr>
+                    <td colspan="5" class="text-center">No records found.</td>
+                  </tr>
+                  <!-- END: no_records -->
+
+                </tbody>
+                <tfoot>
+                  {NAVIGATION}
+                </tfoot>
+              </table>
+            </div>
+    			</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- END:main -->

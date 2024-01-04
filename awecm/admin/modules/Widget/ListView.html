@@ -1,0 +1,66 @@
+<!-- BEGIN:main -->
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>
+      Widgets &nbsp;
+      <a href='./?module=Widget&action=EditView' class="btn btn-success">Add New</a>
+    </h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <form method="get" name="searchForm">
+          <input type="hidden" name="module" value="Widget" />
+          <input type="hidden" name="action" id="action" value="index" />
+          <input type="hidden" name="order_by" value="{ORDER_BY}" />
+          <input type="hidden" name="sort_order" value="{SORT_ORDER}" />
+          <input type="hidden" name="offset" value="{OFFSET}" />
+          <input type="hidden" name="p" value="">
+          <table class="table search-table">
+            {SEARCH_VIEW}
+          </table>
+          <div class="box">
+      			<div class="box-body table-responsive no-padding">
+              <table class="table table-hover editable-table">
+                <tbody>
+                  <tr>
+                    <th style="width: 20%">{NAME_ORDER_BY}</th>
+                    <th style="width: 20%">Short Code</th>
+                    <th style="width: 10%">Author</th>
+                    <th style="width: 10%">{STATUS_ORDER_BY}</th>
+                    <th style="width: 17%">{MODIFIED_ORDER_BY}</th>
+                    <th style="width: 13%">Actions</th>
+                  </tr>
+                  <!-- BEGIN:pagerow -->
+                  <tr id="{row.id}" data-meta-title="{row.META_TITLE}" data-meta-description="{row.META_DESCRIPTION}" class="editable-row {row.row_cls}" data-field-id="{row.id}" data-stub-action="./?module=Widget&action=Save">
+                    <td data-edit-type="text" class="editable-cell quick-options" data-field-name="title" data-value="{row.title}"><a href="./?module=Widget&action=EditView&id={row.id}"><span class='list-title'>{row.title}</span></a></td>
+                    <td data-edit-type="select" data-option-labels="Published,Draft" data-option-values="published,draft" class="editable-cell first-capital" data-field-name="status" data-value="{row.status}"><span class='val'>{row.SHORT_CODE}</span></td>
+                    <td data-edit-type="text" class="" data-field-name="user" data-value="{row.created_by}"><span class='val'>{row.created_by}</span></td>
+                    <td data-edit-type="select" data-option-labels="Published,Draft" data-option-values="published,draft" class="editable-cell first-capital" data-field-name="status" data-value="{row.status}"><span class='val'>{row.status}</span></td>
+                    <td data-edit-type="text" class="" data-field-name="date_created" data-value="{row.date_created}"><span class='val'>{row.date_modified}</span></td>
+                    <td>
+                      <button type="button" onclick="location.href = './?module=Widget&action=EditView&id={row.id}';" class="custom-button"><i title="Edit Widget" class="fa fa-edit"></i></button>&nbsp;&nbsp;
+                      <button type="button" data-delete-path='./?module=Widget&action=Delete&id={row.id}' class="custom-button btn-delete-action"><i title="Delete Widget" class="fa fa-trash"></i></button>&nbsp;&nbsp;
+                    </td>
+                  </tr>
+                  <!-- END:pagerow -->
+
+                  <!-- BEGIN: norow -->
+                  <tr>
+                    <td class="text-center" colspan="6">No records found.</td>
+                  </tr>
+                  <!-- END: norow -->
+
+                </tbody>
+                <tfoot>
+                  {NAVIGATION}
+                </tfoot>
+              </table>
+            </div>
+    			</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- END:main -->

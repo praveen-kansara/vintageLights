@@ -1,0 +1,681 @@
+<!-- BEGIN: main -->
+        <div class="container" style="margin-top:120px;">
+            <h1 class="text-center">Member Application</h1>
+            <!-- BEGIN: thankyou_message -->
+            <div class="text-center" style="font-size:2rem;color:#198754;margin:3rem 1rem;">{THANKYOU_MESSAGE}</div>
+            <!-- END: thankyou_message -->
+            <!-- BEGIN: the_form -->
+            <div class="text-right"><sup style="color:red">*</sup> Required</div>
+            <div class="membership-form contact-page">
+                <div class="contact-us-section">
+                    <div class="form-section">
+                        <form name="application_form" id="frm_application_form" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="q" value="Ajax/SaveApplication" >
+                            <input type="hidden" id="member_form_url" name="member_form_url" value="{CURRENT_FULL_URL}">
+                            
+                            
+                            <div class="container">
+                                
+                                 
+                                
+                                <!-- BEGIN: error_section -->
+                                <div id="error_container1" style="color:red;">
+                                    <p>Required fields</p>
+                                    <div id="error_message">
+                                        <ul>
+                                        <!-- BEGIN: error_fields -->
+                                        <li>{ERROR_MESSAGE}</li>
+                                        <!-- END: error_fields -->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- END: error_section -->
+                                <div class="membership-row-one membership-form-box">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6">
+                                            <label for="suiteno">Suite No<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control is-invalid" name="suiteno" value="{SUITENO}" id="suiteno" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-6">
+                                            <label for="location">Urban Office Location<sup style="color:red">*</sup></label>
+                                         <input type="text" class="form-control is-invalid" name="location" value="{LOCATION}" id="location" required>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-6">
+                                            <label for="duration_term">Desired Term of Membership (Months)<sup style="color:red">*</sup></label>
+                                            <input type="number" class="form-control is-invalid" name="duration_term"  value="{DURATION_TERM}" id="duration_term" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-6">
+                                            <label for="start_date">Desired Start Date<sup style="color:red">*</sup></label>
+                                            <input type="date" class="form-control is-invalid" name="start_date"  value="{START_DATE}" id="start_date" required>
+
+                                        </div>
+                                    </div>
+                                </div>
+    
+    
+                                <div class="membership-row-two membership-form-box mt-5">
+                                    <h2>Applicant</h2>
+    
+                                    <div class="row">
+                                        <div class="col-12 col-md-4">
+                                            <label for="legalname">Legal Business Name<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control" name="legalname"  value="{LEGALNAME}" id="legalname" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-4">
+                                            <label for="dba">DBA (Business Trade Name)</label>
+                                        <input type="text" class="form-control" name="dba"  value="{DBA}" id="dba">
+                                        </div>
+    
+                                        <!--<div class="col-12 col-md-4">-->
+                                        <!--    <label for="taxpayerid">Taxpayer ID#</label>-->
+                                        <!--<input type="text" class="form-control" name="taxpayerid" id="taxpayerid">-->
+                                        <!--</div>-->
+    
+                                        <div class="col-12 col-md-4">
+                                            
+                                            <label class="form-check-label" for="business">Business Classification</label>
+                                            <select class="custom-select" id="business" name="business" value={BUSINESS}>
+                                                <option value="">Select</option>
+                                                <option value="Corp">Corp</option>
+                                                <option value="LP">LP</option>
+                                                <option value="LLC">LLC</option>
+                                                <option value="Sole Prop">Sole Prop</option>
+                                            </select>
+                                            <!--
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="Corp" id="corp"  name="business[]">
+                                              <label class="form-check-label" for="corp">Corp</label>
+                                            </div>
+                                            
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="LP" id="lp"  name="business[]">
+                                              <label class="form-check-label" for="lp">LP</label>
+                                            </div>
+    
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="LLC" id="llc" name="business[]">
+                                              <label class="form-check-label" for="llc">LLC</label>
+                                            </div>
+    
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="Sole Prop" id="soleprop" name="business[]">
+                                              <label class="form-check-label" for="soleprop">Sole Prop</label>
+                                            </div>
+                                            -->
+                                        </div>
+    
+                                        <div class="col-12 col-md-4">
+                                            <label for="taxpayerid">Taxpayer ID#</label>
+                                        <input type="text" class="form-control" name="taxpayerid"  value="{TAXPAYERID}" id="taxpayerid">
+                                        </div>
+    
+                                        <div class="col-12 col-md-4">
+                                            <label for="state">State where registered</label>
+                                        <input type="text" class="form-control" id="state" name="state" value="{STATE}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-4">
+                                            <label for="year">Year organized</label>
+                                        <input type="text" class="form-control" id="year" name="year" value="{YEAR}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-4">
+                                            <label for="businesstype">Type of Business<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control" id="businesstype" name="businesstype" value="{BUSINESSTYPE}" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-4">
+                                            <label for="peoplenumber">Number of people to use/occupy Urban Office<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control" id="peoplenumber" name="peoplenumber" value="{PEOPLENUMBER}" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-4">
+                                        &nbsp;
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-4">
+                                            <label for="contactperson">Primary Contact Person<sup style="color:red">*</sup></label>
+                                            <input type="text" class="form-control" name="contactperson"  value="{CONTACTPERSON}" id="contactperson" required>
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-4">
+                                            <label for="phonenumber">Phone Number<sup style="color:red">*</sup></label>
+                                            <input type="tel" class="form-control" id="phonenumber" name="phonenumber" value="{PHONENUMBER}" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-4">
+                                            <label for="email">Email<sup style="color:red">*</sup></label>
+                                            <input type="email" class="form-control"  id="email" name="email" value="{EMAIL}" required>
+                                        </div>
+
+                                        <div class="col-12 mt-4">
+                                            <label class="form-check-label" for="is_primary_billing">Is the Primary Contact Person the same as the Billing Contact Person?<sup style="color:red">*</sup></label>
+                                            <select class="custom-select" id="is_primary_billing" name="is_primary_billing" value="{IS_PRIMARY BILLING}">
+                                                <option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                              
+                                        </div>
+                                        <div class="col-12 mt-2">
+                                            <label>If no, please provide the Billing Contact Person's information:</label>
+                                        </div>
+
+                                        <div class="col-12 col-md-4">
+                                            <label for="billing_contactperson">Billing Contact Person</label>
+                                            <input type="text" class="form-control" name="billing_contactperson"  value="{BILLING_CONTACTPERSON}" id="billing_contactperson">
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-4">
+                                            <label for="billing_phonenumber">Phone Number</label>
+                                            <input type="tel" class="form-control" id="billing_phonenumber" name="billing_phonenumber" value="{BILLING_PHONENUMBER}" >
+                                        </div>
+    
+                                        <div class="col-12 col-md-4">
+                                            <label for="billing_email">Email</label>
+                                            <input type="email" class="form-control"  id="billing_email" name="{BILLING_EMAIL}">
+                                        </div>
+                                     
+    
+                                        <div class="col-12 col-md-12 mt-5">
+                                            <h5>Home Address<sup style="color:red">*</sup></h5>
+                                        
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="home_street">Street<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control" id="home_street" name="home_street" value="{HOME_STREET}" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="home_city">City<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control"  id="home_city" name="home_city" value="{HOME_CITY}" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="home_state">State<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control" id="home_state" name="home_state" value="{HOME_STATE}" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="home_zip">Zip<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control"  id="home_zip" name="home_zip" value="{HOME_ZIP}" required>
+                                        </div>
+    
+                                        <div class="col-12 mt-4">
+                                            <label for="hearabout">How did you hear about Urban Office?<sup style="color:red">*</sup></label>
+                                            <select class="custom-select" id="hearabout" name="hearabout" value="{HEARABOUT}">
+                                                <option value="Banner Ad">Banner Ad</option>
+                                                <option value="Braun Enterprises Employee">Braun Enterprises Employee</option>
+                                                <option value="Broker">Broker</option>
+                                                <option value="Current Urban Office Member">Current Urban Office Member</option>
+                                                <option value="Email Blast">Email Blast</option>
+                                                <option value="Former Urban Office Member">Former Urban Office Member</option>
+                                                <option value="Google Search - Ad">Google Search - Ad</option>
+                                                <option value="Google Search - Organic">Google Search - Organic</option>
+                                                <option value="Google My Business">Google My Business</option>
+                                                <option value="Mailer">Mailer</option>
+                                                <option value="Listing Site - Commercial Café">Listing Site - Commercial Café</option>
+                                                <option value="Listing Site - Crexi">Listing Site - Crexi</option>
+                                                <option value="Listing Site - Instant Offices">Listing Site - Instant Offices</option>
+                                                <option value="Listing Site - LiquidSpace">Listing Site - LiquidSpace</option>
+                                                <option value="Listing Site - LoopNet">Listing Site - LoopNet</option>
+                                                <option value="Listing Site - SquareFoot">Listing Site - SquareFoot</option>
+                                                <option value="Listing Site - Upflex">Listing Site - Upflex</option>
+                                                <option value="Listing Site - Upsuite">Listing Site - Upsuite</option>
+                                                <option value="Listing Site - Other ">Listing Site - Other </option>
+                                                <option value="News Article">News Article</option>
+                                                <option value="Signage">Signage</option>
+                                                <option value="Social Media">Social Media</option>
+                                                <option value="Urban Office Employee">Urban Office Employee</option>
+                                                <option value="Vendor">Vendor</option>
+                                                <option value="Yelp">Yelp</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="hearabout_other">If other, please specify:</label>
+                                            <input type="text" class="form-control" id="hearabout_other" name="hearabout_other" value="{HEARABOUT_OTHER}" >
+                                        </div>
+                                        <div class="col-12 mt-4">
+
+                                              
+                                            <label class="form-check-label" for="need_furniture">Do you intend to rent furniture?<sup style="color:red">*</sup></label>
+                                            <select class="custom-select" id="need_furniture" name="need_furniture" value="{NEED_FURNITURE}">
+                                                <option value="No">No</option>
+                                                <option value="Yes">Yes</option>
+                                            </select>
+                                              
+                                        </div>
+                                        
+                                        <div class="col-12">
+                                            <label for="requested_furniture">If yes, please provide specific furniture items requested:</label>
+                                            <input type="text" class="form-control" id="requested_furniture" name="requested_furniture" value="{REQUESTED_FURNITURE}">
+                                        </div>
+    
+    
+                                    </div>
+    
+                                </div>
+    
+    
+                                <div class="membership-row-three membership-form-box mt-5">
+                                    <h2>Has Applicant Ever</h2>
+    
+                                    <div class="row">
+                                        <div class="col-12">
+                                          <div class="form-control">
+                                              
+                                              <label class="form-check-label" for="filed_for_Bankruptcy">Filed for Bankruptcy?<sup style="color:red">*</sup></label>
+                                              <select class="custom-select" id="filed_for_Bankruptcy" name="filed_for_Bankruptcy" name="filed_for_Bankruptcy">
+                                                  <option value="No">No</option>
+                                                  <option value="Yes">Yes</option>
+                                              </select>
+                                              
+                                            </div>
+                                            <div class="form-control">
+                                              <label class="form-check-label" for="been_convicted_of_a_crime">Been convicted of a crime? If yes, provide location, year and type of conviction.<sup style="color:red">*</sup></label>
+                                            <select class="custom-select" id="been_convicted_of_a_crime" name="been_convicted_of_a_crime" value="{BEEN_CONVICTED_OF_A_CRIME}">
+                                                  <option value="No">No</option>
+                                                  <option value="Yes">Yes</option>
+                                              </select>
+                                              
+                                            </div>
+    
+                                            <div class="form-control">
+                                              
+                                              <label class="form-check-label" for="registered_sex_offender">Is any occupant a registered sex offender? If yes, provide the location, year and type of conviction.<sup style="color:red">*</sup></label>
+                                              <select class="custom-select" id="registered_sex_offender" name="registered_sex_offender" value="{REGISTERED_SEX_OFFENDER}">
+                                                  <option value="No">No</option>
+                                                  <option value="Yes">Yes</option>
+                                              </select>
+                                            </div>
+    
+                                            <div class="form-control">
+                                              <label class="form-check-label" for="additional_information">Is there additional information Applicant wants considered?<sup style="color:red">*</sup></label>
+                                              <select class="custom-select" id="additional_information" name="additional_information" value="{ADDITIONAL_INFORMATION}">
+                                                  <option value="No">No</option>
+                                                  <option value="Yes">Yes</option>
+                                              </select>
+                                            </div>
+                                        </div>
+    
+                                        <div class="col-12 mt-4">
+                                            <label for="has_applicant_ever_details" class="d-block">If the answer to any of the questions above is YES, please provide specifics and additional information below:</label>
+                                            <textarea id="has_applicant_ever_details" name="has_applicant_ever_details" rows="4" style="width: 100%;">{HAS_APPLICANT_EVER_DETAILS}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+    
+    
+                                <div class="membership-row-four membership-form-box mt-5">
+                                    <h2>Business Rental History <small>(Two years history or more required)</small></h2>
+    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h5>Present Office Address</h5>
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="presentofficestreet">Street</label>
+                                        <input type="text" class="form-control"  id="presentofficestreet" name="presentofficestreet" value="{PRESENTOFFICESTREET}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="presentofficecity">City</label>
+                                        <input type="text" class="form-control" id="presentofficecity" name="presentofficecity" value="{PRESENTOFFICECITY}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-2">
+                                            <label for="presentofficestate">State</label>
+                                        <input type="text" class="form-control" id="presentofficestate" name="presentofficestate" value="{PRESENTOFFICESTATE}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-2">
+                                            <label for="presentofficezip">Zip</label>
+                                        <input type="text" class="form-control" id="presentofficezip" name="presentofficezip" value="{PRESENTOFFICEZIP}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-2">
+                                            <label class="form-check-label" for="present_office_ownership">This office is</label>
+                                            <select class="custom-select" id="present_office_ownership" name="present_office_ownership" value="{PRESENT_OFFICE_OWNERSHIP}">
+                                                <option value="">Select</option>
+                                                <option value="Rented">Rented</option>
+                                                <option value="Own">Owned</option>
+                                            </select>
+                                            <!--
+                                            <label for="" class="d-block">&nbsp;</label>
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="Rent" id="presentofficerent" name="presentofficeon[]">
+                                              <label class="form-check-label" for="presentofficerent">Rent</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="Own" id="presentofficeown" name="presentofficeon[]">
+                                              <label class="form-check-label" for="presentofficeown">Own</label>
+                                            </div>
+                                            -->
+                                        </div>
+    
+                                        
+    
+                                        <div class="col-12 col-md-6">
+                                            <label for="present_office_type">Present Office Type:</label>
+                                            <select class="custom-select" id="present_office_type" name="present_office_type">
+                                                <option value="">Select</option>
+                                                <option value="Office Building">Office Building</option>
+                                                <option value="Coworking Space">Coworking Space</option>
+                                                <option value="Home">Home</option>
+                                                <option value="None">None</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                            <!--
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="Office Building" id="officebuilding" name="present_office_type[]">
+                                              <label class="form-check-label" for="officebuilding">Office Building</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="Coworking Space" id="coworkingspace" name="present_office_type[]">
+                                              <label class="form-check-label" for="coworkingspace">Coworking Space</label>
+                                            </div>
+    
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="Home" id="home" name="present_office_type[]">
+                                              <label class="form-check-label" for="home">Home</label>
+                                            </div>
+    
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="Present Office Type is None" id="office_type_none" name="present_office_type[]">
+                                              <label class="form-check-label" for="office_type_none">None</label>
+                                            </div>
+    
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="Other" id="other" name="present_office_type[]">
+                                              <label class="form-check-label" for="other">Other</label>
+                                              <input type="text" class="form-control" id="present_office_other" name="present_office_other" value="{PRESENT_OFFICE_OTHER}">
+                                            </div>
+                                            -->
+                                            
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-6">
+                                            
+                                              <label class="form-check-label" for="present_office_other">If Other, please specify</label>
+                                              <input type="text" class="form-control" id="present_office_other" name="present_office_other" value="{PRESENT_OFFICE_OTHER}">
+                                            
+                                        </div>
+    
+                                        <div class="col-12 col-md-6">
+                                            <label for="monthlyrentmortgage">Monthly Rent/Mortgage</label>
+                                        <input type="text" class="form-control" id="monthlyrentmortgage" name="monthlyrentmortgage" value="{MONTHLYRENTMORTGAGE}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="occupiedfrom">Occupied from</label>
+                                        <input type="text" class="form-control" id="occupiedfrom"  name="occupiedfrom" value="{OCCUPIEDFROM}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="occupiedto">Occupied to</label>
+                                        <input type="text" class="form-control"  id="occupiedto" name="occupiedto" value="{OCCUPIEDTO}">
+                                        </div>
+    
+                                        <div class="col-12">
+                                            <label for="reasonforleaving">Reason for leaving</label>
+                                        <input type="text" class="form-control" id="reasonforleaving"  name="reasonforleaving" value="{REASONFORLEAVING}">
+                                        </div>
+    
+                                        <div class="col-12">
+                                            <label for="loanservicer">Landlord or Loan Servicer</label>
+                                        <input type="text" class="form-control" id="loanservicer" name="loanservicer" value="{LOANSERVICER}">
+                                        </div>
+    
+    
+                                        <div class="col-12 col-md-7">
+                                            <label for="rentalaccount">Mortgage or Rental Account</label>
+                                        <input type="text" class="form-control" id="rentalaccount" name="rentalaccount" value="{RENTALACCOUNT}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-5">
+                                            <label for="contactemail">Contact Email</label>
+                                        <input type="email" class="form-control" id="contactemail" name="contactemail" value="{CONTACTEMAIL}">
+                                        </div>
+    
+                                        <div class="col-12 mt-4">
+                                            <h5>Prior Office Address</h5>
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="priorofficestreet">Street</label>
+                                        <input type="text" class="form-control" id="priorofficestreet" name="priorofficestreet" value="{PRIOROFFICESTREET}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="priorofficecity">City</label>
+                                        <input type="text" class="form-control" id="priorofficecity" name="priorofficecity" value="{PRIOROFFICECITY}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-2">
+                                            <label for="priorofficestate">State</label>
+                                        <input type="text" class="form-control" id="priorofficestate" name="priorofficestate" value="{PRIOROFFICESTATE}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-2">
+                                            <label for="priorofficezip">Zip</label>
+                                        <input type="text" class="form-control" id="priorofficezip" name="priorofficezip" value="{PRIOROFFICEZIP}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-2">
+                                            <label class="form-check-label" for="prior_office_type">This office was</label>
+                                            <select class="custom-select" id="prior_office_type" name="prior_office_type" value="{PRIOR_OFFICE_TYPE}">
+                                                <option value="">Select</option>
+                                                <option value="Rented">Rented</option>
+                                                <option value="Own">Owned</option>
+                                            </select>
+                                            <!--
+                                            <label for="" class="d-block">&nbsp;</label>
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="Rent" id="priorofficerent">
+                                              <label class="form-check-label" for="priorofficerent">Rent</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="checkbox" value="Own" id="priorofficeown">
+                                              <label class="form-check-label" for="priorofficeown">Own</label>
+                                            </div>
+                                            -->
+                                        </div>
+    
+                                        <div class="col-12 col-md-6">
+                                            <label for="monthlyrentmortgagetwo">Monthly Rent/Mortgage</label>
+                                        <input type="text" class="form-control" id="monthlyrentmortgagetwo" name="monthlyrentmortgagetwo" >
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="business_rental_history_occupiedfrom">Occupied from</label>
+                                        <input type="text" class="form-control" id="business_rental_history_occupiedfrom" name="business_rental_history_occupiedfrom" value="{BUSINESS_RENTAL_HISTORY_OCCUPIEDFROM}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="business_rental_history_occupiedto">Occupied to</label>
+                                        <input type="text" class="form-control" id="business_rental_history_occupiedto" name="business_rental_history_occupiedto" value="{BUSINESS_RENTAL_HISTORY_OCCUPIEDTO}">
+                                        </div>
+    
+                                        <div class="col-12">
+                                            <label for="business_rental_history_reasonforleaving">Reason for leaving</label>
+                                        <input type="text" class="form-control" id="business_rental_history_reasonforleaving" name="business_rental_history_reasonforleaving"  value="{BUSINESS_RENTAL_HISTORY_REASONFORLEAVING}" >
+                                        </div>
+    
+                                        <div class="col-12">
+                                            <label for="business_rental_history_loanservicer">Landlord or Loan Servicer</label>
+                                        <input type="text" class="form-control" id="business_rental_history_loanservicer" name="business_rental_history_loanservicer" value="{BUSINESS_RENTAL_HISTORY_LOANSERVICER}">
+                                        </div>
+    
+    
+                                        <div class="col-12 col-md-7">
+                                            <label for="business_rental_history_rentalaccount">Mortgage or Rental Account</label>
+                                            <input type="text" class="form-control" id="business_rental_history_rentalaccount" name="business_rental_history_rentalaccount" value="{BUSINESS_RENTAL_HISTORY_RENTALACCOUNT}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-5">
+                                            <label for="business_rental_history_contactemail">Contact Email</label>
+                                        <input type="email" class="form-control" id="business_rental_history_contactemail" name="business_rental_history_contactemail" value="{BUSINESS_RENTAL_HISTORY_CONTACTEMAIL}">
+                                        </div>
+                                    </div>
+                                </div>
+    
+    
+    
+                                <div class="membership-row-five membership-form-box mt-5">
+                                    <h2>Guarantors</h2>
+                                    
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <h5 >1.</h5>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <label for="guarantorsname">Name<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control" id="guarantorsname" name="guarantorsname" value="{GUARANTORSNAME}" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-6">
+                                            <label for="guarantorstitle">Title<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control" id="guarantorstitle" name="guarantorstitle" value="{GUARANTORSTITLE}" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-6">
+                                            <label for="guarantorsdob">Date of Birth<sup style="color:red">*</sup></label>
+                                        <input type="date" class="form-control" id="guarantorsdob" name="guarantorsdob" value="{GUARANTORSDOB}" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-6">
+                                            <label for="guarantorsemail">Email<sup style="color:red">*</sup></label>
+                                        <input type="email" class="form-control" id="guarantorsemail" name="guarantorsemail" value="{GUARANTORSEMAIL}" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-12 col-md-12"><p class="h6">Home Address</p></div>
+                                        <div class="col-12 col-md-3">
+                                            <label for="homestreet">Street<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control" id="homestreet" name="homestreet" value="{HOMESTREET}" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="homecity">City<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control" id="homecity" name="homecity" value="{HOMECITY}" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="homestate">State<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control" id="homestate" name="homestate" value="{HOMESTATE}" required>
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="homezip">Zip<sup style="color:red">*</sup></label>
+                                        <input type="text" class="form-control" id="homezip" name="homezip" value="{HOMEZIP}" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group row">
+                                        
+                                        <div class="col-12 col-md-12">
+                                            <h5>2.</h5>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <label for="secondguarantorsname">Name</label>
+                                        <input type="text" class="form-control" id="secondguarantorsname" name="secondguarantorsname" value="{SECONDGUARANTORSNAME}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-6">
+                                            <label for="secondguarantorstitle">Title</label>
+                                        <input type="text" class="form-control" id="secondguarantorstitle" name="secondguarantorstitle" value="{SECONDGUARANTORSTITLE}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-6">
+                                            <label for="secondguarantorsdob">Date of Birth</label>
+                                        <input type="date" class="form-control" id="secondguarantorsdob" name="secondguarantorsdob" value="{SECONDGUARANTORSDOB}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-6">
+                                            <label for="secondguarantorsemail">Email</label>
+                                        <input type="email" class="form-control" id="secondguarantorsemail" name="secondguarantorsemail" value="{SECONDGUARANTORSEMAIL}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-12 col-md-12"><p class="h6">Home Address</p></div>
+                                        
+                                        <div class="col-12 col-md-3">
+                                            <label for="homestreettwo">Street</label>
+                                        <input type="text" class="form-control" id="homestreettwo" name="homestreettwo" value="{HOMESTREETTWO}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="homecitytwo">City</label>
+                                        <input type="text" class="form-control" id="homecitytwo" name="homecitytwo" value="{HOMECITYTWO}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="homestatetwo">State</label>
+                                        <input type="text" class="form-control" id="homestatetwo" name="homestatetwo" value="{HOMESTATETWO}">
+                                        </div>
+    
+                                        <div class="col-12 col-md-3">
+                                            <label for="homeziptwo">Zip</label>
+                                        <input type="text" class="form-control" id="homeziptwo" name="homeziptwo" value="{HOMEZIPTWO}">
+                                        </div>
+                                    </div>
+                                </div>
+    
+    
+
+                                <div class="membership-row-six membership-form-box mt5">
+                                    <div class="col-12">
+                                        <h2>Certification</h2>
+                                        <p>I hereby certify that the information provided in this Membership Application is complete, true, and correct. I understand that Urban Office will rely on the information provided in this Membership Application in making a decision to enter into an agreement with me, or in the event of a default under any agreement with me. I hereby authorize Urban Office and its agents to obtain credit reports and criminal background reports, and verify my credit standing and financial stature, rental history, and employment history. I hereby agree to release, indemnify and hold Urban Office, including Urban Office’s employees, agents, and contractors, harmless from all statutory, common law, and all other liability claims related to Urban Office’s inquiries into, or use of, the information provided in this Membership Application, as well as Urban Office’s use of any information obtained from third parties in connection with this Membership Application.</p>
+                                    </div>
+
+                                    
+                                    <div class="row">
+                                        <div class="col-12 col-md-4">
+                                            <label for="cert_printed_name">Printed Name<sup style="color:red">*</sup></label>
+                                            <input type="text" class="form-control" name="cert_printed_name"  value="{CERT_PRINTED_NAME}" id="cert_printed_name" required>
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-4">
+                                            <label for="cert_title">Title<sup style="color:red">*</sup></label>
+                                            <input type="text" class="form-control" name="cert_title"  value="{CERT_TITLE}" id="cert_title" required>
+                                        </div>
+                                        
+                                        <div class="col-12 col-md-4">
+                                            <label for="cert_date">Date<sup style="color:red">*</sup></label>
+                                            <input type="date" class="form-control" name="cert_date"  value="{CERT_DATE}" id="cert_date" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 pt-3">
+                                      <label for="file_dl" class="form-label">Drivers License<sup style="color:red">*</sup></label>
+                                      <input type="file" class="form-control" name="file_dl" id="file_dl" placeholder="" aria-describedby="fileHelpId" required>
+                                      <div id="fileHelpId" class="form-text">Please upload driver's license</div>
+                                    </div>
+                                </div>
+                                <div class="row membership-form-box">
+                                    <div class="col-12 col-md-12 form-group text-center">
+                                        <button type="submit" class="btn btn-primary" id="formsubmitbtn">Submit the Application</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <input type="text" id="donot_change" name="donot_change" value=""> -->
+                        </form>
+                    </div>
+                </div>
+               
+               
+            </div>
+            <!-- END: the_form -->
+
+        </div>
+<!-- END: main -->

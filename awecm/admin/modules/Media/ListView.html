@@ -1,0 +1,59 @@
+<!-- BEGIN:main -->
+<style>
+.media-page-loader {
+  background: #fff url('{FRONT_IMG_PATH}page-loader.gif') center center no-repeat; background-size: 80px auto;
+}
+</style>
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>
+      {MEDIALIBARARY}
+    </h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="nav-tabs-custom">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#medialist" data-toggle="tab" aria-expanded="false">{MEDIA} List</a></li>
+            <li class="pull-right header"> <button id="add_media_image" 
+              class="btn btn-success">Add another Image</button> </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="medialist">
+              <div class="row" id="list">
+                <div class="col-md-12">
+                  <div class="media-search">
+                    <div class="form-inline">
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="media_name" name="name" placeholder="Image Name" value="{IMG_NAME}" size="40">&nbsp;&nbsp;
+                        <select style="width: 200px" class="form-control select2" id="filters">{FILTER_LIST}</select>
+                      </div>
+                      &nbsp;&nbsp;<button  type="button" id="search_filter" 
+                        class="btn btn-primary">Search</button>
+
+                      &nbsp;&nbsp;<button id="btn_reset" type="button" 
+                        class="btn btn-default">Reset</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="media-page-loader-main">
+                    <ul class="lib-list" id="lib_list" style="min-height: 700px;">
+                      <div class="media-page-loader"></div>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="addmedia">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+</div>
+<!-- END:main -->

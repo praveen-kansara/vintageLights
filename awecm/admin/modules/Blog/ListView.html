@@ -1,0 +1,129 @@
+<!-- BEGIN:main -->
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>
+      Blog &nbsp;
+      <a href="./?module=Blog&action=EditView" class="btn btn-success">Add New</a>
+    </h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <form method="get" name="searchForm">
+          <input type="hidden" name="module" value="Blog" />
+          <input type="hidden" name="action" id="action" value="index" />
+          <input type="hidden" name="order_by" value="{ORDER_BY}" />
+          <input type="hidden" name="sort_order" value="{SORT_ORDER}" />
+          <input type="hidden" name="offset" value="{OFFSET}" />
+          <input type="hidden" name="post_type" value="page" />
+          <input type="hidden" name="p" value="">
+          <table class="table search-table">
+            {SEARCH_VIEW}
+          </table>
+          <div class="box">
+          	<div class="box-body table-responsive no-padding">
+              <table class="table table-hover editable-table">
+                <tbody>
+                  <tr>
+                    <th style="width: 30%">{NAME_ORDER_BY}</th>
+                    <th style="width: 15%">Author</th>
+                    <th style="width: 20%">{STATUS_ORDER_BY}</th>
+                    <th style="width: 20%">{MODIFIED_ORDER_BY}</th>
+                    <th style="width: 15%">Actions</th>
+                  </tr>
+                  <!-- BEGIN:pagerow -->
+                  <tr id="{row.id}" data-meta-title="{row.META_TITLE}" data-meta-description="{row.META_DESCRIPTION}" class="editable-row {row.row_cls}" data-field-id="{row.id}" data-stub-action="./?module=Blog&action=Save">
+                    <td data-edit-type="text" class="editable-cell quick-options" data-field-name="title" data-value="{row.title}"><a href="./?module=Blog&action=EditView&id={row.id}"><span class='val list-title'>{row.title}</span></a></td>
+                    <td data-edit-type="text" class="" data-field-name="user" data-value="{row.created_by}"><span class='val'>{row.created_by}</span></td>
+                    <td data-edit-type="select" data-option-labels="Published,Draft" data-option-values="published,draft" class="editable-cell first-capital" data-field-name="status" data-value="{row.status}"><span class='val'>{row.status}<br />{row.publish_date}</span></td>
+                    <td data-edit-type="text" class="" data-field-name="date_created" data-value="{row.date_modified}"><span class='val'>{row.date_modified}</span></td>
+                    <td>
+                      <button type="button" onclick="location.href = './?module=Blog&action=EditView&id={row.id}';" class="custom-button"><i title="Edit page" class="fa fa-edit"></i></button>&nbsp;&nbsp;
+                      <button type="button" data-delete-path='./?module=Blog&action=Delete&id={row.id}' class="custom-button btn-delete-action"><i title="Delete page" class="fa fa-trash"></i></button>&nbsp;&nbsp;
+                    <!-- BEGIN:page_view_btn -->
+                      <button type="button" class="custom-button" onclick="window.open('{PAGE_URL}')" /><i title="View" class="fa fa-eye"></i></button>
+                     <!-- END:page_view_btn -->
+
+                    </td>
+                  </tr>
+                  <tr data-orig-row-id="#{row.id}" id="hid-{row.id}" class="hidden hidden-rows">
+                    <td colspan="7">
+                      <div class="row">
+                        <div class="col-xs-6">
+                          <form>
+                            <div class="form-group row">
+                              <label for="title_{row.id}" class="col-sm-2 control-label">Title</label>
+                              <div class="col-sm-10 editable-cell" data-field-name="title" data-edit-type="text">
+                                <input value="{row.title}" type="text" class="form-control input-sm" 
+                                  id="title_{row.id}" placeholder="Enter title" />
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="order_{row.id}" class="col-sm-2 control-label">Sequence</label>
+                              <div class="col-sm-10 editable-cell" data-field-name="sequence" data-edit-type="text">
+                                <input value="{row.sequence}" type="text" class="form-control input-sm" 
+                                  id="order_{row.id}" placeholder="Enter sequence">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="status_{row.id}" class="col-sm-2 control-label">Status</label>
+                              <div class="col-sm-10 editable-cell" data-edit-type="select" 
+                                data-field-name="status">
+                                <select class="form-control input-sm" 
+                                  id="status_{row.id}">{row.STATUS_DOM}</select>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="col-xs-6">
+                          <form>
+                            <div class="form-group row">
+                              <label for="meta-title_{row.id}" class="col-sm-2 control-label">
+                                SEO Title</label>
+                              <div class="col-sm-10 editable-cell" data-edit-type="text" 
+                                data-field-name="meta_title">
+                                <input value="{row.META_TITLE}" type="text" class="form-control" 
+                                  id="meta-title_{row.id}" placeholder="Enter SEO Title">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="meta_description_{row.id}" class="col-sm-2 control-label">
+                                Meta Description</label>
+                              <div class="col-sm-10 editable-cell" data-edit-type="textarea" 
+                                data-field-name="meta_description">
+                                <textarea type="text" class="form-control" 
+                                          id="meta_description_{row.id}" placeholder="Enter meta description"
+                                           >{row.META_DESCRIPTION}</textarea>
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-sm-offset-2 col-sm-4">
+                                <button type="button" class="btn btn-primary btn-xs btn-update-quick-edit">Update</button>
+                                <button type="button" class="btn btn-default btn-xs btn-cancel-quick-edit">Cancel</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- END:pagerow -->
+
+                  <!-- BEGIN: norow -->
+                  <tr>
+                    <td class="text-center" colspan="6">No blogs added yet. Press the <strong>Add New</strong>  button on the top to add a new blog</td>
+                  </tr>
+                  <!-- END: norow -->
+                </tbody>
+                <tfoot>
+                  {NAVIGATION}
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- END:main -->

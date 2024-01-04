@@ -1,0 +1,31 @@
+<!-- BEGIN: main -->
+<div class="content-sec press-detail-page">
+  <div class="container" id="info-section">
+    {BREADCRUMB}
+    <div class="info-section">
+      <div class="titlebox">
+        <h1>{PAGE_TITLE}</h1>
+        <p class="blog-date">{PUBLISH_DATE}</p>
+      </div>
+      <!-- BEGIN: featuredimg -->
+      <div class="featured-img">
+        <img src="{FEATURED_IMAGE_URL}" width="1200" height="1200" alt="{FEATURED_IMAGE_ALT}" title="{FEATURED_IMAGE_ALT}">
+      </div>
+      <!-- END: featuredimg -->
+      <p>{CONTENT}</p>
+      <!-- BEGIN: prev -->
+      <div style="padding-top:1.2rem;">
+        <a href="{prev.uri}" title="{prev.short_description}" id="{prev.id}">← {prev.title}</a>
+      </div>
+      <!-- END: prev -->
+      <!-- BEGIN: next -->
+      <div style="text-align:right;">
+        <a href="{next.uri}" title="{next.short_description}" id="{next.id}">{next.title} →</a>
+      </div>
+      <!-- END: next -->
+    </div>
+  </div>
+
+</div>
+{JSON_LD}
+<!-- END: main -->

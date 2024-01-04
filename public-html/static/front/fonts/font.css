@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'ITC Souvenir';
+    src: url('Souvenir-Medium.eot');
+    src: url('Souvenir-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Souvenir-Medium.woff2') format('woff2'),
+        url('Souvenir-Medium.woff') format('woff'),
+        url('Souvenir-Medium.ttf') format('truetype'),
+        url('Souvenir-Medium.svg#Souvenir-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITC Souvenir';
+    src: url('Souvenir-Bold.eot');
+    src: url('Souvenir-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Souvenir-Bold.woff2') format('woff2'),
+        url('Souvenir-Bold.woff') format('woff'),
+        url('Souvenir-Bold.ttf') format('truetype'),
+        url('Souvenir-Bold.svg#Souvenir-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+

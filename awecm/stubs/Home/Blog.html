@@ -1,0 +1,28 @@
+<!-- BEGIN: main -->
+<div class="content-sec press-list-page">
+  <div class="container">
+    {BREADCRUMB}
+  </div>
+
+  <div class="container">
+    <!-- BEGIN: row -->
+    <div class="article-box {row.cls}">
+      <div class="container">
+        <div class="row">
+        <div class="col-12 col-md-12 col-lg-4"><img src="{row.featured_image_url}" alt="{row.featured_image_alt}" title="{row.featured_image_alt}" /></div>
+        <div class="col-12 col-md-12 col-lg-8">
+        <div class="titlebox">
+          <h3><a href="{row.redirect_link}">{row.title_txt}</a></h3>
+          <div class="blog-date">{row.publish_date}</div>
+        </div>
+        <div class="excerpt">
+          {row.short_description}
+        </div>
+        <a href="{row.redirect_link}" class="read-more">Read More</a></div>
+        </div>
+      </div>
+    </div>
+    <!-- END: row -->
+  </div>
+</div>
+<!-- END: main -->

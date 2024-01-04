@@ -1,0 +1,113 @@
+<!-- BEGIN:main -->
+<div class="content-wrapper">
+<!-- BEGIN:msg -->
+<div class="alert alert-success alert-dismissible">
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+<p><b>Settings {SUCCESS_MESSAGE}</b></p>
+</div>
+<!-- END:msg -->
+  <section class="content-header">
+    <h1>
+      Settings
+       <button purge-path="./?module=Settings&action=PurgeCache" 
+        class="btn btn-primary pull-right perg-cache">Purge Cache</button>
+       <button minify-path="./?module=Settings&action=Minify" 
+        class="btn btn-primary pull-right minify margin-right">Minify Static Files</button>
+    </h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <form role="form" method="post" id="settings_page">
+            <input type="hidden" name="module" value="Settings">
+            <input type="hidden" name="action" value="Save">
+            <div class="box-body">
+              
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="box-header setting-title with-border">
+                    <h3 class="box-title">Site Information</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="form-group">
+                    <label for="name">Site Name</label>
+                    <input name="settings[]" value="{NAME}" type="text" class="form-control form-control requiredField valid" id="name" placeholder="Enter name" required maxlength="50">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <div class="form-group">
+                    <label for="email">Site Email</label>
+                    <input name="settings[]" value="{EMAIL}" type="email" class="form-control requiredField valid" id="email" placeholder="Enter email" required/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-12">
+                  <div class="form-group">
+                    <label for="header_script">Header Scripts</label>
+                    <textarea name="settings[]" rows="5" class="form-control editor" id="header_script" 
+                      placeholder="Enter Header Scripts">{HEADER_SCRIPT}</textarea>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                  <div class="form-group">
+                    <label for="footer_script">Footer Scripts</label>
+                    <textarea name="settings[]" rows="5" class="form-control editor" id="footer_script" placeholder="Enter Footer Scripts">{FOOTER_SCRIPT}</textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-12">
+              <!-- BEGIN: email_settings_dom -->
+
+                  <div class="box-header setting-title with-border">
+                    <h3 class="box-title">Email Settings</h3>
+                  </div>
+                  <!-- BEGIN: email_setting_section -->
+
+                    <!-- BEGIN: em_row_start -->
+                    <div class="row">
+                    <!-- END: em_row_start -->
+
+                    <div class="col-xs-12 col-md-6">
+
+                      <div class="form-group">
+
+                        <label for="{EMAIL_SETTING_KEY}">{EMAIL_SETTING_LABEL}</label>
+                        <input name="email_settings[{EMAIL_SETTING_KEY}]" placeholder="{EMAIL_SETTING_PLACEHOLD}" 
+                        value="{EMAIL_SETTING_VAL}" required 
+                          id="{EMAIL_SETTING_KEY}" type="{EMAIL_SETTING_TYPE}" class="form-control form-control">
+                      
+                      </div>
+
+                    </div>
+
+                    <!-- BEGIN: em_row_end -->
+                    </div>
+                    <!-- END: em_row_end -->
+
+                <!-- END: email_setting_section -->
+
+
+              <!-- END: email_settings_dom -->
+
+                {EM_CLOSE_DIV}
+                </div>
+              </div>
+
+            </div>
+            <div class="box-footer">
+              <button type="submit" class="btn btn-primary">Save</button>&nbsp;&nbsp;<a href="?module=SystemUser&action=index" class="btn btn-default">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- END:main -->

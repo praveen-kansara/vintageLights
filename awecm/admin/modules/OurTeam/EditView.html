@@ -1,0 +1,203 @@
+<!-- BEGIN:main -->
+<div class="content-wrapper">
+<!-- BEGIN:msg -->
+<div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+<p><b>Our Team {SUCCESS_MESSAGE}</b></p>
+</div>
+	
+<!-- END:msg -->
+  <section class="content-header">
+    <h1>
+      {MODE} Our Team
+    </h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <form role="form" method="post" id="form" class="form-page" enctype="multipart/form-data">
+        <div class="col-xs-9">
+          <div class="box">
+            <input type="hidden" name="post_type" value="our_team">
+            <input type="hidden" name="module" value="OurTeam">
+            <input type="hidden" name="action" value="Save">
+            <input type="hidden" name="id" value="{ID}">
+            <input type="hidden" name="slug" value="{PAGE_SLUG}" />
+            <div class="box-body">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input required autocomplete="off" name="title" value="{OUR_TEAM_TITLE}" type="text" class="form-control" id="title" placeholder="Enter title" />
+              </div>
+              <div class="form-group {SLUG_EXISTS}" id="slug_block">
+                <p class="{SLUG_CLASS}"><label>Permalink: </label>&nbsp;<span class="permalink">{PERMALINK}</span>
+                &nbsp;<button type="button" class='btn btn-default btn-xs btn-slug-edit'>Edit</button>
+                <button type="button" class='btn btn-default btn-xs hidden btn-slug-ok'>OK</button>&nbsp;
+                <button type="button" class='btn btn-default btn-xs hidden btn-slug-cancel'>Cancel</button>
+                &nbsp;<button type="button" id="btn-slug-view_page" class="btn btn-default btn-xs {HIDE_VIEW_BTN} btn-slug-view" onclick="window.open('{PAGE_LINK}')">View</button>
+                </p>
+              </div>
+              <div class="form-group pos-r">
+                 <button type="button" class="visual switcher">Text</button> 
+                <label for="content">Content</label>
+                <textarea name="content" type="text" class="form-control editor" id="content" placeholder="Enter CONTENT">{OUR_TEAM_CONTENT}</textarea>
+              </div>
+              <div class="form-group">
+                <label for="short_description">Short Description</label>
+                <textarea name="short_description" type="text" class="form-control" 
+                  id="short_description" placeholder="Enter short description for property">{OUR_TEAM_SHORT_DESCRIPTION}</textarea>
+              </div>
+              <div class="form-group">
+                <label for="meta">Banner Image ( Click to add Banner Image )</label>
+                <div class="banner-image-wrapper">
+                  <i class="fa fa-times remove-banner text-danger" title="Remove Banner Image"></i>
+                  <input type="hidden" id="meta" name="banner_image" value="{MEDIA_ID}" />
+                  <div class="banner-image">
+                    <img class="img-responsive banner-img" src="{BANNER_IMAGE}" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="sequence">Sequence</label>
+                <input name="sequence" type="number" class="form-control" value="{SEQUENCE}" id="sequence" min="0" placeholder="Enter sequence" />
+              </div>
+              <div class="form-group">
+                <label for="designation">Designation</label>
+                <input name="designation" type="text" class="form-control" value="{DESIGNATION}" id="designation" placeholder="Enter designation" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input name="email" type="email" class="form-control" value="{EMAIL}" id="email" placeholder="Enter email" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input name="phone" type="text" class="form-control" value="{PHONE}" id="phone" placeholder="Enter phone" />
+              </div>
+            </div>
+          </div>
+          
+          <div class="box">
+          	<div class="box-body">
+          		<h3 class="margin-top-0">SEO Settings</h3>
+          		<div class="form-group">
+                <label for="SEO title">SEO Title</label>
+                <input name="meta_title" id="SEO title" type="text" 
+                  class="form-control" value="{META_TITLE}" placeholder="Enter SEO title" />
+              </div>
+              <div class="form-group">
+                <label for="meta_keywords">Meta Keywords</label>
+                <input name="meta_keywords" type="text" id="meta_keywords" 
+                  class="form-control" value="{META_KEYWORDS}" placeholder="Enter meta keywords" />
+              </div>
+              <div class="form-group">
+                <label for="meta_description">Meta Description</label>
+                <textarea name="meta_description" id="meta_description" class="form-control" 
+                  placeholder="Enter meta description">{META_DESCRIPTION}</textarea>
+              </div>
+              <label for="Meta Description">Meta Robot</label>
+              <div class="checkbox">
+                  <label for="No Index" class="right-spacing">
+                    <input type="checkbox" name="meta_robots_index" 
+                      id="No Index" {META_ROBOTS_INDEX} value="1">No-Index</label>
+                  <label for="No Follow"><input type="checkbox" 
+                    name="meta_robots_follow" id="No Follow" {META_ROBOTS_FOLLOW} 
+                    value="1">No-Follow</label>
+              </div>
+          	</div>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">Publish</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group hidden">
+                    <label>Status</label>
+                    <select id="status" name="status" class="form-control">{SEARCH_STATUS}</select>
+                  </div>
+                  <div class="form-group">
+                    <button type="button" id="btn_save_draft" 
+                      class="btn btn-primary btn-sm">Save Draft</button>
+                    <button type="button" id="btn_save_publish" 
+                      class="btn btn-success btn-sm">Publish</button>
+                    <a href="./?module=OurTeam&action=index" class="btn btn-default btn-sm">Cancel</a>
+                  </div>
+                  <label for="publish_date">Publish Date</label>
+                  <div class="input-group form-group">
+                    <input type="text" class="form-control" name="publish_date" 
+                    id="publish_date" value="{PUBLISH_DATE}" placeholder=" Publish Date" autocomplete="off">
+                  </div>
+                  <div class="form-group {HIDE_CLASS}">
+                    <a href="" class="text-danger" id="move_trash"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Move To Trash</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">Featured Image</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <input type="hidden" name="featured_image" value="{MEDIA_ID_FEATURED}"/>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="preview-social-share-image">
+                      <img class="img-responsive social-share-img" src="{SOCIAL_SHARE_IMG}" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <a id="link_set_featured_image" href="#open_popup">Add image</a>
+                    <span class="pull-right {MEDIA_ID_FEATURED_CLASS}" id="remove_featured_image"><i class="fa fa-times cursor-pointer text-danger" title="Remove featured image"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">VCARD</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div id="preview_vcard" class="preview-brochure">
+                      <input type="hidden" id="vcard_path" name="vcard_path" value="{VCARD_PATH_ONLY}">
+                      <a href="{VCARD_PATH}" class="btn btn-border" download>
+                        <i class="fa fa-file-pdf-o" title="View vCARD"></i>&nbsp;&nbsp;Download vCARD
+                      </a>
+                      <span class="pull-right" id="remove_vcard">
+                        <i class="fa fa-times cursor-pointer text-danger" title="Remove"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div id="input_vcard">
+                      <p>Upload vCARD</p>
+                      <input type="file" name="vcard" id="vcard">
+                      <span class="text-danger" id="vcard_select_error">Only 'VCF' format is allowed</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+<!-- END:main -->

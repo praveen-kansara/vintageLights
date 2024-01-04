@@ -1,0 +1,122 @@
+<!-- BEGIN:main -->
+<div class="content-wrapper">
+  <!-- BEGIN:msg -->
+  <div class="alert alert-success alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <p><b>System User {SUCCESS_MESSAGE}</b></p>
+  </div>
+  <!-- END:msg -->
+  <section class="content-header">
+    <h1>
+      {HEADLABLE} System User
+    </h1>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <form role="form" method="post" id="SystemUserEdit">
+            <input type="hidden" name="module" value="SystemUser">
+            <input type="hidden" name="action" value="Save">
+            <input type="hidden" name="id" id="cuser_id" value="{ID}">
+            <div class="box-body">
+              <div class="col-xs-12 col-md-6">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input name="name" value="{NAME}" type="text" id="name" 
+                        class="form-control form-control requiredField valid" 
+                        placeholder="Enter name" required maxlength="50">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input name="email" value="{EMAIL}" type="email" class="form-control" 
+                        id="email" placeholder="Enter email" required/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <label for="phone">Phone No.</label>
+                      <input name="phone" value="{PHONE}" type="text" class="form-control" 
+                        id="phone" placeholder="Enter phone" maxlength="20"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <label for="address">Address</label>
+                      <input name="address" value="{ADDRESS}" type="text" class="form-control" 
+                        id="address" placeholder="Enter Address" maxlength="250"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                      <label for="City">City</label>
+                      <input name="city" value="{CITY}" type="text" class="form-control" id="City" placeholder="Enter city" maxlength="50"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="checkbox">
+                      <label for="active"><input type="checkbox" name="is_active" 
+                        id="active" {STATUS} value="1">Active</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-md-6 {HIDECLASS}">
+                <div class="form-group">
+                  <label for="password">New Password</label>
+                  <input name="password" value="" type="password" class="form-control" id="password" placeholder="Enter Password" {DISABLE}>
+                </div>
+                <div class="form-group">
+                  <label for="cpassword">Confirm Password</label>
+                  <input name="cpassword" value="" type="password" class="form-control" id="cpassword" placeholder="Confirm Password" {DISABLE}>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-6 {HIDE}">
+                <div class="form-group">
+                  <label for="newpassword">New Password</label>
+                  <input name="newpassword" value="" type="password" class="form-control" id="newpassword" placeholder="Enter Password" {DISABLE2}>
+                </div>
+                <div class="form-group">
+                  <label for="newcpassword">Confirm Password</label>
+                  <input name="newcpassword" value="" type="password" class="form-control" 
+                    id="newcpassword" placeholder="Confirm Password" {DISABLE2}>
+                </div>
+              </div>
+
+            </div>
+            <div class="box-footer">
+              <div class="col-xs-12 col-md-6">
+                <button type="submit" class="btn btn-primary">Save</button>&nbsp;&nbsp;
+                <a href="?module=SystemUser&action=index" class="btn btn-default">Cancel</a>
+              </div>
+              <!-- BEGIN:delete_btn -->
+              <div class="col-xs-12 col-md-6">
+                <button type="button"  class="btn btn-danger btn-delete-action pull-right"  
+                    data-delete-path='./?module=SystemUser&action=Delete&id={ID}'><i 
+                    title="Delete System User" class="fa fa-trash"></i></button>
+              </div>
+              <!-- END:delete_btn -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{JAVASCRIPT}
+<!-- END:main -->

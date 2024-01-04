@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="35px" viewBox="0 0 19 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Path</title>
+    <g id="Main-Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Page-V3" transform="translate(-1315.000000, -2260.000000)" fill="#979797" fill-rule="nonzero">
+            <g id="Amenities-slider" transform="translate(32.000000, 1928.000000)">
+                <g id="Group" transform="translate(0.000000, 332.000000)">
+                    <polygon id="Path" transform="translate(1292.384615, 17.416667) scale(-1, 1) rotate(90.000000) translate(-1292.384615, -17.416667) " points="1307.96189 8 1292.38457 23.2767942 1276.80734 8 1275 9.7840629 1292.38457 26.833333 1309.76923 9.7840629"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

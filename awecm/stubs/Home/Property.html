@@ -1,0 +1,299 @@
+
+
+<!-- BEGIN: main -->
+<div class="property-detail-page">
+  <div class="banner-section property-banner-section parallax" style="background-image: url({BANNER_URL});">
+    <div class="logo-icon-section">
+      <img src="{LOCAL_CDN_PATH}Urban-office-logo-white.svg" width="200" height="215" alt="Urban Office" title="Urban Office" class="logo-img">
+    </div>
+    <a href="javascript:void(0);" id="section-icon"><img src="{LOCAL_CDN_PATH}scroll-icon.svg" width="32" height="50" alt="Scroll-icon" title="Scroll-icon" class="scroll-icon"></a>
+  </div>
+  <div class="property-info-section">
+    <div class="bg-grey"></div>
+    <div class="container" id="info-section">
+      {BREADCRUMB}
+      <div class="info-section">
+        <h1>{PAGE_TITLE}</h1>
+        <p class="address">{ADDRESS}</p>
+        <p class="info-sec-buttons">
+          <a href="#" data-target="book-a-tour" class="btn-black" onclick="Calendly.initPopupWidget({url: '{CALENDLY_METTING_URL}?a2={CALENDLY_PROPERTY_NAME},%20{CALENDLY_PROPERTY_ADDRESS}'});return false;">Book a Tour</a>
+          <!-- BEGIN: flyer_link_section_top -->
+          <a href="{FLYER_LINK}" target="_blank" class="btn-black-border mx-3">Download Flyer</a>
+          <!-- END: flyer_link_section_top -->
+          <a href="#" class="btn-black-border" data-toggle="modal" data-target="#reserve-space-form">Reserve a Space</a> 
+          <!-- BEGIN: virtual_tour_button -->
+          <a href="{CURRENT_URL}#virtual_tour"  class="btn-black-border mx-4">Virtual Tour</a>
+          <!-- END: virtual_tour_button -->
+        </p>
+        <h3>Location Highlights</h3>
+        <p>{CONTENT}</p>
+      </div>
+    </div>
+  </div>
+  <!-- BEGIN: video_section -->
+  <div class="video-section" id="video-section">
+    <div class="video-box">
+      {VIDEO_CODE}
+      <div class="content-icon-section text-center"><img src="{LOCAL_CDN_PATH}urban-office-banner-logo.svg" alt="Urban Office" title="Urban Office" class="logo-img" width="173" height="186"></div>
+    </div>
+  </div>
+  <!-- END: video_section -->
+  <!-- BEGIN: no_video_section -->
+  <div class="video-section placeholder" style="background-image: url({VIDEO_PLACEHOLDER_IMAGE_URL});">
+    <div class="overlay"></div>
+    <div class="content-icon-section text-center">
+      <h2>Video Coming Soon</h2>
+      <img src="{LOCAL_CDN_PATH}Tour-play-btn.svg" alt="Play Icon" title="Play Icon" width="100" height="100">
+    </div>
+  </div>
+  <!-- END: no_video_section -->
+  <!-- BEGIN: gallery_section -->
+  <div class="property-gallery-section">
+    <div class="container-full-width">
+      {GALLERY_SECTION}
+    </div>
+  </div>
+  <!-- END: gallery_section -->
+  <div class="floor-plan-section text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <!-- BEGIN: floor_plan_section -->
+        <div class="col-12 {COLUMN_CLASS} mb-4">
+          <h2>{FLOOR_PLAN_TITLE}</h2>
+          <h3 class="subtitle">{FLOOR_PLAN_SUB_TITLE}</h3>
+          <div class="image-section" style="max-width:{FLOOR_PLAN_IMAGE_WIDTH}; max-height:{FLOOR_PLAN_IMAGE_HEIGHT};">
+            <div class="panzoom" id="panzoom-element">
+              <img src="{FLOOR_PLAN_ZOOM_IMAGE_URL}" width="{FLOOR_PLAN_IMAGE_WIDTH}" height="{FLOOR_PLAN_IMAGE_HEIGHT}" alt="Floor Plan {PAGE_TITLE}" title="Floor Plan {PAGE_TITLE}">
+            </div>
+          </div>
+          <div class="buttons">
+            <button id="zoom-in" class="btn-black-border"><img src ="{LOCAL_CDN_PATH}plus-icon.png" width="12" height="12" alt="Zoom In" title="Zoom In"></button>
+            <button id="zoom-out" class="btn-black-border"><img src ="{LOCAL_CDN_PATH}remove-icon.png" width="12" height="12" alt="Zoom Out" title="Zoom Out"></button>
+          </div>
+        </div>
+        <!-- END: floor_plan_section -->
+        <div class="col-12 col-md-6 mb-4">
+          <!-- BEGIN: floor_plan2_section -->
+          <h2>{FLOOR_PLAN2_TITLE}</h2>
+          <div class="image-section" style="max-width:{FLOOR_PLAN2_IMAGE_WIDTH}; max-height:{FLOOR_PLAN2_IMAGE_HEIGHT};">
+            <div class="panzoom" id="panzoom-element2">
+              <img src="{FLOOR_PLAN2_ZOOM_IMAGE_URL}" width="{FLOOR_PLAN2_IMAGE_WIDTH}" height="{FLOOR_PLAN2_IMAGE_HEIGHT}" alt="Floor Plan {PAGE_TITLE}" title="Floor Plan {PAGE_TITLE}">
+            </div>
+          </div>
+          <div class="buttons">
+            <button id="zoom2-in" class="btn-black-border"><img src ="{LOCAL_CDN_PATH}plus-icon.png" width="12" height="12" alt="Zoom In" title="Zoom In"></button>
+            <button id="zoom2-out" class="btn-black-border"><img src ="{LOCAL_CDN_PATH}remove-icon.png" width="12" height="12" alt="Zoom Out" title="Zoom Out"></button>
+          </div>
+          <!-- END: floor_plan2_section -->
+          
+        </div>
+        
+        <div class="col-12 col-md-6 mb-4">
+          <!-- BEGIN: floor_plan3_section -->
+          <h2>{FLOOR_PLAN3_TITLE}</h2>
+          <div class="image-section" style="max-width:{FLOOR_PLAN3_IMAGE_WIDTH}; max-height:{FLOOR_PLAN3_IMAGE_HEIGHT};">
+            <div class="panzoom" id="panzoom-element3">
+              <img src="{FLOOR_PLAN3_ZOOM_IMAGE_URL}" width="{FLOOR_PLAN3_IMAGE_WIDTH}" height="{FLOOR_PLAN3_IMAGE_HEIGHT}" alt="Floor Plan {PAGE_TITLE}" title="Floor Plan {PAGE_TITLE}">
+            </div>
+          </div>
+          <div class="buttons">
+            <button id="zoom3-in" class="btn-black-border"><img src ="{LOCAL_CDN_PATH}plus-icon.png" width="12" height="12" alt="Zoom In" title="Zoom In"></button>
+            <button id="zoom3-out" class="btn-black-border"><img src ="{LOCAL_CDN_PATH}remove-icon.png" width="12" height="12" alt="Zoom Out" title="Zoom Out"></button>
+          </div>
+          <!-- END: floor_plan3_section -->
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- BEGIN: amenities_section -->
+  <div class="amenities-section bg-grey text-center">
+    <div class="container">
+      <h2 class="text-center">Amenities</h2>
+      <h3 class="subtitle">Experience Our Creatively Designed Amenities.</h3>
+      <div class="row row-eq-height">
+        <!-- BEGIN: amenities_section_row -->
+        <!-- BEGIN: amenities_section_column -->
+        <div class="col-12 col-md-4 col-lg-3 row-box">
+          <div class="amenities-box">
+            <div class="content-section">
+              <div class="image-box">
+                <img src="{AMINITY_IMAGE}" width="{AMINITY_WIDTH}" height="{AMINITY_HEIGHT}" alt="{AMINITY_TITLE}" title="{AMINITY_TITLE}">
+              </div>
+              <p>{AMINITY_TITLE}</p>
+            </div>
+          </div>
+        </div>
+        <!-- END: amenities_section_column -->
+        <!-- END: amenities_section_row -->
+      </div>
+    </div>
+  </div>
+  <!-- END: amenities_section -->
+  <!-- BEGIN: second_banner_section1 -->
+  <div class="cta-property-banner cta-property-detail" >
+    <a href="{MATTERPORT_URL}" target="_blank"><img src="{SECOND_BANNER_IMAGE_URL}" alt="Urban Office" title="Urban Office" ></a>
+    <!--<img src="{LOCAL_CDN_PATH}urban-office-banner-logo.svg" alt="Urban Office" title="Urban Office" class="logo-img" width="173" height="186">-->
+  </div>
+  <!--<div class="cta-property-banner cta-property-detail parallax" style="background-image: url({SECOND_BANNER_IMAGE_URL});">
+    <img src="{LOCAL_CDN_PATH}urban-office-banner-logo.svg" alt="Urban Office" title="Urban Office" class="logo-img" width="173" height="186">
+    </div>-->
+  <!-- END: second_banner_section1 -->
+  <!-- BEGIN: virtual_tour_section -->
+  <div class="bg-grey virtual-tour-section">
+      <div class="container">
+          <h2 class="text-center" style="padding-top:5px;">Virtual Tour</h2>
+          <div id="virtual_tour" >
+            {MATTERPORT_URL}
+            {MATTERPORT_URL2}
+            
+           </div>
+            
+      </div>
+  </div>
+  <!-- END: virtual_tour_section -->
+
+   
+  <div class="walkable-amenities bg-grey">
+    <div class="container">
+      <!-- BEGIN: walkable_amenity_section -->
+      <div class="amenities-list-box">
+        <h2 class="text-center">Walkable Amenities</h2>
+        <h3 class="subtitle text-center">Click Amenity to Learn More.</h3>
+        <div class="list-section">
+          <div class="row justify-content-center">
+            {WALKABLE_AMENITY_CONTENT}
+          </div>
+        </div>
+      </div>
+      <!-- END: walkable_amenity_section -->
+      <!-- BEGIN: onsite_amenity_section -->
+      <div class="amenities-list-box">
+        <h2 class="text-center">On-site Amenities</h2>
+        <h3 class="subtitle text-center">Click Amenity to Learn More.</h3>
+        <div class="list-section">
+          <div class="row justify-content-center">
+            {ONSITE_AMENITY_CONTENT}
+          </div>
+        </div>
+      </div>
+      <!-- END: onsite_amenity_section -->
+      <p class="text-center">
+        <a href="#" class="btn-black" onclick="Calendly.initPopupWidget({url: '{CALENDLY_METTING_URL}?a2={CALENDLY_PROPERTY_NAME},%20{CALENDLY_PROPERTY_ADDRESS}'});return false;">Book a Tour</a>
+        <!-- BEGIN: flyer_link_section -->
+        <a href="{FLYER_LINK}" target="_blank" class="btn-black-border">Download Flyer</a>
+        <!-- END: flyer_link_section -->
+        <a href="#" class="btn-black-border" data-toggle="modal" data-target="#reserve-space-form">Reserve a Space</a>
+      </p>
+    </div>
+  </div>
+  <!-- BEGIN: property_location_section -->
+  <div class="property-location-section text-center">
+    <div class="container">
+      <h2>Property Location</h2>
+      <div class="map-responsive">
+        <iframe src="{PROPERTY_LOCATION_CODE}" width="1170" height="466" style="border:1px solid #eee;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+  <!-- END: property_location_section -->
+  <!-- BEGIN: similar_property_section -->
+  <div class="property-slider text-center bg-grey">
+    <div class="container">
+      <h2>Other Urban Office Locations</h2>
+      <h4>With a professional address you get a top-notch address at prime locations in Houston, San Antonio, and Austin.</h4>
+      <div class="slider-section">
+        <div class="slider multiple-items">
+          <!-- BEGIN: similar_property_section_property -->
+          <div class="slider-box">
+            <a href="{PROPERTY_URI}"><img src="{IMAGE_PATH}" width="555" height="555" alt="{PROPERTY_IMAGE_ALT}" title="{PROPERTY_IMAGE_ALT}"></a>
+            <h5><a href="{PROPERTY_URI}">{NAME}</a></h5>
+            <a href="{PROPERTY_URI}" class="btn learn-more-btn">Learn More</a>
+          </div>
+          <!-- END: similar_property_section_property -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: similar_property_section -->
+  <div class="modal fade reserve-space-form" id="reserve-space-form" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Reserve Your Space for <strong>{PAGE_TITLE}</strong></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-section">
+            <form id="reserve_space_form">
+              <input type="hidden" name="type" value="ajax" />
+              <input type="hidden" name="property_id" value="{PROPERTY_ID}">
+              <input type="hidden" name="tag" value="reserve_space" />
+              <input type="hidden" name="user_agent" value="{HTTP_USER_AGENT}" />
+              <input type="hidden" name="ip" value="{REMOTE_ADDR}" />
+              <div class="row">
+                <div class="col-12 col-md-6 form-group">
+                  <label for="first-name">First Name</label>
+                  <input type="text" class="form-control" id="first-name" name='first_name' requried/>
+                </div>
+                <div class="col-12 col-md-6 form-group">
+                  <label for="last-name">Last Name</label>
+                  <input type="text" class="form-control" id="last-name" name='last_name' requried/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6 form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" name='email' requried/>
+                </div>
+                <div class="col-12 col-md-6 form-group">
+                  <label for="phone-number">Phone Number</label>
+                  <input type="text" class="form-control" id="phone-number" name='phone'/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6 form-group">
+                  <label for="move-in-date">Preferred Move-in Date</label>
+                  <input class="form-control datepicker" id="date" placeholder="MM/DD/YYY" type="text" name='move_in_date' requried/>
+                </div>
+                <div class="col-12 col-md-6 form-group">
+                  <label for="number-of-people">Number Of People</label>
+                  <input type="text" class="form-control" id="number-of-people" name="no_of_people" requried/>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-12">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                </div>
+              </div>
+              <button type="button" id='reserver_space_submit' class="btn btn-black-border">Submit</button>
+              <div class="form-group">
+                <div class="form_row success-msg reserve-space-success-msg mt-4" id="reserve_space" hidden>
+                  <div class="alert alert-success alert-dismissable" >
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>Success!</strong> Request has been submitted.
+                  </div>
+                </div>
+                <div class="form_row reserve-space-success-msg mt-4" id="reserve_space_error_message" hidden>
+                  <div class="alert alert-danger alert-dismissable" >
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><span id="reserve_inquiry_error_message"></span>
+                  </div>
+                </div>
+                <div class="form_row mt-4" id="reserve_space_sending" hidden>
+                  <div class="alert alert-success alert-dismissable" >
+                    Sending your request..
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END: main -->
+

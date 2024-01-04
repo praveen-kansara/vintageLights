@@ -1,0 +1,23 @@
+/* css for quick edit feature */
+table td.editable-cell {
+  position: relative;
+}
+table td.editable-cell div.row-actions {
+  position: absolute;
+  cursor: pointer;
+  bottom: 3px;
+}
+table tr.editable-row td {
+  padding-bottom: 25px;
+}
+table.editable-table tr.meta-row td {
+  border-top: 1px solid transparent;
+}
+table.editable-table tr.hidden-rows td {
+  background-color: #eff0f1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+table.editable-table tr td.first-capital {
+  text-transform: capitalize;;
+}

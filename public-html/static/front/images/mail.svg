@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="9px" viewBox="0 0 13 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <g id="Main-Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Properties-List-View(Location)" transform="translate(-934.000000, -1130.000000)" fill="#979797" fill-rule="nonzero">
+            <g id="Footer" transform="translate(0.000000, 979.000000)">
+                <g id="Group-9" transform="translate(934.000000, 33.000000)">
+                    <g id="call" transform="translate(0.000000, 87.000000)">
+                        <g id="email" transform="translate(0.000000, 31.000000)">
+                            <path d="M6.5,4.64862069 L0.43662069,0 L12.5624828,0 L6.5,4.64862069 Z M4.53587931,3.70724138 L0,7.78991379 L0,0.230189655 L4.53587931,3.70724138 Z M4.89763793,3.98472414 L6.36372414,5.10855172 C6.44413904,5.17013376 6.55586096,5.17013376 6.63627586,5.10855172 L8.10236207,3.98472414 L12.6400345,8.06896552 L0.359965517,8.06896552 L4.89763793,3.98472414 Z M8.46412069,3.70724138 L13,0.230189655 L13,7.78991379 L8.46412069,3.70724138 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

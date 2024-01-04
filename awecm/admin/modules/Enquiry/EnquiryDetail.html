@@ -1,0 +1,76 @@
+<!-- BEGIN:main -->
+<div class="content-wrapper">
+  <!-- BEGIN:msg -->
+  <div class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <p><b>{SUCCESS_MESSAGE}</b></p>
+  </div>
+  <!-- END:msg -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <form method="get" name="searchForm">
+          <input type="hidden" name="module" value="Enquiry" />
+          <input type="hidden" name="action" id="action" value="EnquiryDetail" />
+          <input type="hidden" name="order_by"      value="{ORDER_BY}" />
+          <input type="hidden" name="sort_order"    value="{SORT_ORDER}" />
+          <input type="hidden" name="offset"        value="{OFFSET}" />
+          <input type="hidden" name="p"             value="" />
+          <input type="hidden" name="email"         value="{USER_EMAIL}" />
+
+          <div class="box">
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <th style="width: 15%">Date</th>
+                    <th style="width: 10%">Sent By</th>
+                    <th style="width: 20%">Sent To</th>
+                    <th style="width: 25%">Message</th>
+                    <th style="width: 20%">Products</th>
+                    <th style="width: 10%">E Catalog</th>
+                  </tr>
+                  <!-- BEGIN:response_row -->
+                  <tr>
+                    <td>{row.date_created}</td>
+                    <td>{row.sent_by}</td>
+                    <td>{row.sent_to}</td>
+                    <td>
+
+                      <div class="short_desc">
+                      {row.short_msg}
+                      </div>
+                      <!-- BEGIN: data_toggle -->
+                     
+                      <a class="read-toggle">Read more</a>
+                     
+                      <div class="description">
+                        {row.message}
+                      </div>
+                      <a class="read-less">Read Less</a>
+                      <!-- END: data_toggle -->
+
+                    </td>
+                  </tr>
+                  <!-- END:response_row -->
+
+                  <!-- BEGIN: no_records -->
+                  <tr>
+                    <td colspan="7" class="text-center">No records found.</td>
+                  </tr>
+                  <!-- END: no_records -->
+
+                </tbody>
+                <tfoot>
+                  {NAVIGATION}
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+</div>
+<!-- END:main -->

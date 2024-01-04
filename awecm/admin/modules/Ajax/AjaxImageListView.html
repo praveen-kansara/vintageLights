@@ -1,0 +1,38 @@
+<!-- BEGIN:main -->
+
+<!-- BEGIN: imageitem -->
+<li>
+  <a href="javascript;" data-page-id="{ID}" class="images-pop-anchor">
+    <div class="dz-preview media-item dz-image-preview dz-processing dz-success dz-complete">
+      <div class="media-wrapper">
+        <div class="media-preview">
+          <div class="dz-details">
+            <img class="img-responsive main-image" src="{row.thumbnail_path}" data-dz-thumbnail="images/download.png" alt="{row.alt}">
+          </div>
+          <div class="dz-progress">
+            <span class="dz-upload" data-dz-uploadprogress=""></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</li>
+<!-- END: imageitem -->
+
+<!-- BEGIN: pagination_item -->
+<span class="load_more_paging">
+  <p class="page_par text-center"><a href="javascript:;" 
+      class="load_more btn-sm btn-primary" data-search-count="{SEARCH_COUNT}" 
+      data-pageno="{PAGENO}">Load More &downarrow;</a></p>
+  <p class="loader_par text-center" style="display: none"><img src="{LOADER_PATH}"></p>
+</span>
+<!-- END: pagination_item -->
+
+
+{JAVASCRIPT}
+
+<!-- BEGIN: no_result -->
+<p class="text-center">No Data found</p>
+<!-- END: no_result -->
+
+<!-- END:main -->
